@@ -3,12 +3,27 @@
  */
 package yt.downloader;
 
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+
+    public static ConfigManager configManager;
+    public static String webpage;
+
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        // ApplicationContext ctx = SpringApplication.run(App.class, args);
+
+        try {
+            configManager = new ConfigManager();
+        } catch (Exception e) { e.printStackTrace(); }
+
+        webpage = configManager.getIndexHtml();
+
+        SpringApplication.run(App.class, args);
+
     }
 }
