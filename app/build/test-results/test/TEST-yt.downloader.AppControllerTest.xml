@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="yt.downloader.AppControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-25T15:47:10" hostname="LAPTOP-HP-OMEN" time="1.74">
+<testsuite name="yt.downloader.AppControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-25T17:00:28" hostname="LAPTOP-HP-OMEN" time="1.432">
   <properties/>
-  <testcase name="getHello()" classname="yt.downloader.AppControllerTest" time="1.74"/>
-  <system-out><![CDATA[18:47:06.856 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [yt.downloader.AppControllerTest]: AppControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-18:47:07.075 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration yt.downloader.App for test class yt.downloader.AppControllerTest
+  <testcase name="getHello()" classname="yt.downloader.AppControllerTest" time="1.432"/>
+  <system-out><![CDATA[20:00:25.506 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [yt.downloader.AppControllerTest]: AppControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:00:25.738 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration yt.downloader.App for test class yt.downloader.AppControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,12 +13,12 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.0)
 
-2023-09-25T18:47:07.788+03:00  INFO 6112 --- [    Test worker] yt.downloader.AppControllerTest          : Starting AppControllerTest using Java 17.0.8 with PID 6112 (started by HP-OMEN 17-AN014NU in D:\ToolBox\Tools\Kit\YT-Downloader\app)
-2023-09-25T18:47:07.791+03:00  INFO 6112 --- [    Test worker] yt.downloader.AppControllerTest          : No active profile set, falling back to 1 default profile: "default"
-2023-09-25T18:47:10.060+03:00  INFO 6112 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-09-25T18:47:10.060+03:00  INFO 6112 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-09-25T18:47:10.066+03:00  INFO 6112 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2023-09-25T18:47:10.124+03:00  INFO 6112 --- [    Test worker] yt.downloader.AppControllerTest          : Started AppControllerTest in 2.744 seconds (process running for 4.886)
+2023-09-25T20:00:26.427+03:00  INFO 4768 --- [    Test worker] yt.downloader.AppControllerTest          : Starting AppControllerTest using Java 17.0.8 with PID 4768 (started by HP-OMEN 17-AN014NU in D:\ToolBox\Tools\Kit\YT-Downloader\app)
+2023-09-25T20:00:26.430+03:00  INFO 4768 --- [    Test worker] yt.downloader.AppControllerTest          : No active profile set, falling back to 1 default profile: "default"
+2023-09-25T20:00:28.444+03:00  INFO 4768 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-09-25T20:00:28.445+03:00  INFO 4768 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-09-25T20:00:28.450+03:00  INFO 4768 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-09-25T20:00:28.523+03:00  INFO 4768 --- [    Test worker] yt.downloader.AppControllerTest          : Started AppControllerTest in 2.486 seconds (process running for 4.632)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
