@@ -2,7 +2,7 @@
 Website that you can download any video from YouTube. It is .mp4 fomat
 
 ### Frameworks
-* ```Spring Boot 3```
+* ```Spring Boot```
 * ```JUnit```
 * ```JavaTube```
 * ```Docker```
