@@ -14,12 +14,7 @@ public class ConfigManager {
 
 
     public ConfigManager() throws IOException {
-
-        //DumperOptions options = new DumperOptions();
-        //options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
-        //yaml = new Yaml(options);
-        List<String> files = List.of("web/index.html", "config.yml");
-        for (String name : files) {
+        for (String name : List.of("web/index.html", "config.yml", "web/background.jpg", "web/styles.css")) {
             if (!Files.exists(Path.of(name))) {
                 if (name.contains("/")) {
                     String sub = name.substring(0, name.lastIndexOf('.'));
@@ -33,14 +28,14 @@ public class ConfigManager {
             }
         }
 
-            // Open a FileWriter for the specified file
-            //FileWriter writer = new FileWriter("config.yml");
+        // Open a FileWriter for the specified file
+        //FileWriter writer = new FileWriter("config.yml");
 
-            // Write the YAML data to the file
-            //yaml.dump(getConfigData(), writer);
+       // Write the YAML data to the file
+       //yaml.dump(getConfigData(), writer);
 
-            // Close the FileWriter
-            //writer.close();
+       // Close the FileWriter
+       //writer.close();
 
         //configData = yaml.load(new FileInputStream("config.yml"));
     }
