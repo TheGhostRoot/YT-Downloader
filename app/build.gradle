@@ -34,6 +34,10 @@ dependencies {
     implementation 'org.yaml:snakeyaml:2.2'
 }
 
+springBoot {
+    mainClass = 'yt.downloader.App'
+}
+
 test {
     useJUnitPlatform()
 }
@@ -45,7 +49,9 @@ java {
     }
 }
 
-
+tasks.named("bootJar") {
+    mainClass = 'yt.downloader.App'
+}
 
 jar {
     manifest {
