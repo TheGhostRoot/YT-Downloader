@@ -7,6 +7,9 @@ package yt.downloader;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.File;
+import java.util.Scanner;
+
 @SpringBootApplication
 public class App {
 
@@ -15,13 +18,25 @@ public class App {
 
 
     public static void main(String[] args) {
-        // ApplicationContext ctx = SpringApplication.run(App.class, args);
-
         try {
             configManager = new ConfigManager();
         } catch (Exception e) { e.printStackTrace(); }
 
-        webpage = configManager.getIndexHtml();
+        File file = new File("web/index.html");
+        if (file.exists()) {
+            try (Scanner myReader = new Scanner(file)) {
+                StringBuilder stringBuilder = new StringBuilder();
+                while (myReader.hasNextLine()) {
+                    stringBuilder.append(myReader.nextLine());
+                }
+                myReader.close();
+                webpage = stringBuilder.toString();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            webpage = configManager.getIndexHtml();
+        }
 
         SpringApplication.run(App.class, args);
 

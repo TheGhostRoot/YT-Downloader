@@ -20,9 +20,9 @@ public class ConfigManager {
         //yaml = new Yaml(options);
         List<String> files = List.of("web/index.html", "config.yml");
         for (String name : files) {
-            String sub = name.substring(0, name.lastIndexOf('.'));
-            if (!Files.exists(Path.of(name)) || !Files.exists(Path.of(sub))) {
+            if (!Files.exists(Path.of(name))) {
                 if (name.contains("/")) {
+                    String sub = name.substring(0, name.lastIndexOf('.'));
                     int i = sub.lastIndexOf('/');
                     File folders = new File(sub.substring(0, i == -1 ? sub.length() : i));
                     if (!folders.exists()) {
