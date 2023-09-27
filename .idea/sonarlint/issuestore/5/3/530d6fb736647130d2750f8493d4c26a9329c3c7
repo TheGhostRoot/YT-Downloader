@@ -1,18 +1,0 @@
-
-{
-java:S1104"YMake configManager a static final constant or non-public and provide accessors if needed.(ßÚöùÿÿÿÿ8“ÇŸé¬1
-u
-java:S1104"SMake webpage a static final constant or non-public and provide accessors if needed.(–ï¶üÿÿÿÿ8”ÇŸé¬1
-U
-java:S1444"3Make this "public static configManager" field final(ßÚöùÿÿÿÿ8”ÇŸé¬1
-S
-java:S2696"6Make the enclosing method "static" or remove this set.(‹›£‡8ÇÇŸé¬1
-
-java:S4087'"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(Œ¯‰Â8­™ é¬1
-G	java:S106%"+Replace this use of System.out by a logger.(…ò£—8°™ é¬1
-Y
-java:S1128"<Remove this unused import 'com.google.common.base.Charsets'.(ÆÍ—õ8ÑÇŸé¬1
-\
-java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8ÑÇŸé¬1
-M
-java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8ÑÇŸé¬1
