@@ -1,6 +1,7 @@
 package yt.downloader;
 
 
+import com.github.felipeucelli.javatube.Youtube;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ public class AppController {
 
 
     @GetMapping("/")
-    String index(@RequestParam(required = false) String ytlinks) {
+    String index(@RequestParam(required = false) String ytlinks) throws Exception {
         if (ytlinks != null) {
             List<String> links = Arrays.stream(ytlinks.replaceAll(" ", "").split("\n")).toList();
             if (App.filterLinks(links).isEmpty()) {
