@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="yt.downloader.AppControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-27T15:49:59" hostname="LAPTOP-HP-OMEN" time="1.6">
+  <properties/>
+  <testcase name="getHello()" classname="yt.downloader.AppControllerTest" time="1.6"/>
+  <system-out><![CDATA[18:49:56.462 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [yt.downloader.AppControllerTest]: AppControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:49:56.649 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration yt.downloader.App for test class yt.downloader.AppControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2023-09-27T18:49:57.244+03:00  INFO 8292 --- [    Test worker] yt.downloader.AppControllerTest          : Starting AppControllerTest using Java 17.0.3 with PID 8292 (started by HP-OMEN 17-AN014NU in D:\ToolBox\Tools\Kit\YT-Downloader\app)
+2023-09-27T18:49:57.246+03:00  INFO 8292 --- [    Test worker] yt.downloader.AppControllerTest          : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T18:49:59.024+03:00  INFO 8292 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-09-27T18:49:59.025+03:00  INFO 8292 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-09-27T18:49:59.029+03:00  INFO 8292 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-09-27T18:49:59.066+03:00  INFO 8292 --- [    Test worker] yt.downloader.AppControllerTest          : Started AppControllerTest in 2.193 seconds (process running for 4.558)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -14,7 +14,7 @@ public class ConfigManager {
 
 
     public ConfigManager() throws IOException {
-        for (String name : List.of("web/index.html", "config.yml", "web/background.jpg", "web/styles.css", "web/app.js")) {
+        for (String name : List.of("web/index.html", "config.yml", "web/styles.css", "web/app.js")) {
             if (!Files.exists(Path.of(name))) {
                 if (name.contains("/")) {
                     String sub = name.substring(0, name.lastIndexOf('.'));
@@ -51,7 +51,9 @@ public class ConfigManager {
 
     private void loadResource(String resourcePath, String outputPath) throws IOException {
         FileWriter writer = new FileWriter(outputPath);
-        writer.write(Resources.toString(Resources.getResource(resourcePath), StandardCharsets.UTF_8));
+        if (!resourcePath.endsWith(".jpg") || !resourcePath.endsWith(".png")) {
+            writer.write(Resources.toString(Resources.getResource(resourcePath), StandardCharsets.UTF_8));
+        }
         writer.close();
     }
 

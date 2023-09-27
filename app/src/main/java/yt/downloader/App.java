@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.File;
+import java.util.List;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -15,6 +16,8 @@ public class App {
 
     public static ConfigManager configManager;
     public static String webpage;
+    public static String style;
+    public static String js;
 
 
     public static void main(String[] args) {
@@ -22,23 +25,43 @@ public class App {
             configManager = new ConfigManager();
         } catch (Exception e) { e.printStackTrace(); }
 
-        File file = new File("web/index.html");
-        if (file.exists()) {
-            try (Scanner myReader = new Scanner(file)) {
-                StringBuilder stringBuilder = new StringBuilder();
-                while (myReader.hasNextLine()) {
-                    stringBuilder.append(myReader.nextLine());
+        for (String path : List.of("web/index.html", "web/styles.css", "web/app.js")) {
+            File file = new File(path);
+            if (file.exists()) {
+                try (Scanner myReader = new Scanner(file)) {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    while (myReader.hasNextLine()) {
+                        stringBuilder.append(myReader.nextLine());
+                    }
+                    myReader.close();
+                    if (path.endsWith(".js")) {
+                        js = stringBuilder.toString();
+                    } else if (path.endsWith(".css")){
+                        style = stringBuilder.toString();
+                    } else {
+                        webpage = stringBuilder.toString();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                myReader.close();
-                webpage = stringBuilder.toString();
-            } catch (Exception e) {
-                e.printStackTrace();
+            } else {
+                if (path.endsWith(".js")) {
+                    js = "function updateDownloadProgress(percent) { document.getElementById(\"progress\").innerHTML = percent }";
+                } else if (path.endsWith(".css")){
+                    style = "body { background-image: url('background.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover; }";
+                } else {
+                    webpage = configManager.getIndexHtml();
+                }
             }
-        } else {
-            webpage = configManager.getIndexHtml();
         }
 
         SpringApplication.run(App.class, args);
 
+    }
+
+
+    public static List<String> filterLinks(List<String> links) {
+        return links.stream().filter(link -> link.startsWith("https://www.youtube.com/watch?v=") ||
+                link.startsWith("https://youtu.be/")).toList();
     }
 }
