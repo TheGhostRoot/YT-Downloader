@@ -1,5 +1,4 @@
 var image_url = "https://cdn.discordapp.com/attachments/779418496601686016/1156623723655348224/background.jpg?ex=6515a548&is=651453c8&hm=54a1d501eabd031cff961f91a8d087725cc4dbcf5b440eaae53358f1c54a80bc&";
-var isButtonPresent = false;
 var videos = new Map();
 
 function addVideoButton(name) {
@@ -28,8 +27,6 @@ function addVideoButton(name) {
     var newline = document.createElement("br");
     newline.setAttribute("id", "videoln");
     document.getElementById("downloadbtn").appendChild(newline);
-
-    isButtonPresent = true;
 }
 
 
@@ -42,34 +39,29 @@ function removeVideoButtons() {
 
 async function getVideoTitle(link) {
     try {
-
            const response = await fetch("https://www.youtube.com/oembed?url="+link+"&format=json");
-
            if (!response.ok) {
                 return "";
            }
-
            var data = await response.json();
            return data["title"];
-
-        /*
-           const html = await response.text();
-           const doc = new DOMParser().parseFromString(html, 'text/html');
-           const ytFormattedString = doc.querySelector('yt-formatted-string.style-scope.ytd-watch-metadata');
-
-           if (ytFormattedString) {
-                  return ytFormattedString.innerText.trim();
-           } else {
-                  return "Video has no title";
-           }*/
     } catch (error) {
         return "";
     }
 }
 
+function isInVideos(link) {
+    for (var v of videos.values()) {
+        if (v == link) {
+            return true;
+        }
+    }
+    return false;
+}
+
 async function filterAndAddVideoButtons() {
     for (var link of document.getElementById("links").value.split("\n")) {
-        if ((link.startsWith("https://www.youtube.com/watch?v=") || link.startsWith("https://youtu.be/")) && !isButtonPresent) {
+        if ((link.startsWith("https://www.youtube.com/watch?v=") || link.startsWith("https://youtu.be/")) && !isInVideos(link)) {
             var title = await getVideoTitle(link);
             if (title.length > 0) {
                 videos.set(title, link);
@@ -83,22 +75,23 @@ function updateDownloadProgress(percent) {
       document.getElementById("progress").innerHTML = percent;
 }
 
-
+function getLinkByTitle(title, n) {
+      n *= -1;
+      title = title.slice(0, n);
+      return videos.has(title) ? videos.get(title) : "";
+}
 
 function sendDownloadRequestmp4h() {
-       var title = document.getElementById("mp4h").innerHTML;
-       title = title.slice(0, (10));
-       if (videos.has(title)) {
-            var link = videos.get(title);
-
-       }
-
+       var link = getLinkByTitle(document.getElementById("mp4h").innerHTML, 11);
+       console.log(link);
 }
 
 function sendDownloadRequestmp4l() {
-        return "";
+        var link = getLinkByTitle(document.getElementById("mp4l").innerHTML, 10);
+        console.log(link);
 }
 
 function sendDownloadRequestmp3a() {
-        return " ";
+        var link = getLinkByTitle(document.getElementById("mp3a").innerHTML, 6);
+        console.log(link);
 }

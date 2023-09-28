@@ -24,7 +24,7 @@ public class AppController {
     String js() {
         return App.js;
     }
-
+ // favicon.ico
 
     @PostMapping("/download")
     String insert(@RequestBody String link, @RequestBody String format) {
