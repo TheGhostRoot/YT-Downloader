@@ -27,7 +27,21 @@ public class AppController {
  // favicon.ico
 
     @PostMapping("/download")
-    String insert(@RequestBody String link, @RequestBody String format) {
-        return  "";
+    String download(@RequestBody String link, @RequestBody String format) {
+        switch (format) {
+            case "mp4h": {
+                // TODO download MP4 with high quality
+                break;
+            }
+            case "mp4l": {
+                // TODO download MP4 with low quality
+                break;
+            }
+            case "mp3a": {
+                // TODO download MP3 audio (high if possible)
+                break;
+            }
+        }
+        return App.webpage;
     }
 }
