@@ -60,8 +60,5 @@ public class App {
     }
 
 
-    public static List<String> filterLinks(List<String> links) {
-        return links.stream().filter(link -> link.startsWith("https://www.youtube.com/watch?v=") ||
-                link.startsWith("https://youtu.be/")).toList();
-    }
+    // background-image: url(\""+image_url+"\");background-repeat: no-repeat;background-position: left;padding-left: 250px;font-weight: bold;background-size: 100%;
 }

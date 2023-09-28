@@ -1,0 +1,9 @@
+
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ü—Í‘8š”ñ»­1
+‰
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ü—Í‘8Â”ñ»­1
+j
+java:S5361"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Ÿê–¼øÿÿÿÿ8Ùýì»­1
+F	java:S106"+Replace this use of System.out by a logger.(†‰ÄP8Úýì»­1
+g
+java:S1128"ERemove this unused import 'com.github.felipeucelli.javatube.Youtube'.(šáÄµøÿÿÿÿ8Ï”ñ»­1
