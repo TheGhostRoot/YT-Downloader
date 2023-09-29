@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -55,7 +56,9 @@ public class App {
             }
         }
 
-        SpringApplication.run(App.class, args);
+        SpringApplication app = new SpringApplication(App.class);
+        app.setDefaultProperties(Collections.singletonMap("server.port", "25533"));
+        app.run(args);
 
     }
 

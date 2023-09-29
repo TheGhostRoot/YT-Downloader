@@ -1,10 +1,7 @@
 package yt.downloader;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AppController {
@@ -26,20 +23,37 @@ public class AppController {
     }
  // favicon.ico
 
-    @PostMapping("/download")
-    String download(@RequestBody String link, @RequestBody String format) {
-        switch (format) {
-            case "mp4h": {
-                // TODO download MP4 with high quality
-                break;
-            }
-            case "mp4l": {
-                // TODO download MP4 with low quality
-                break;
-            }
-            case "mp3a": {
-                // TODO download MP3 audio (high if possible)
-                break;
+    @GetMapping("/favicon.ico")
+    String icon() {
+        return "<html><head></head><body><img src=\"https://cdn.discordapp.com/attachments/779418496601686016/1157283999413190677/youtube-dl-icon.png?ex=65180c36&is=6516bab6&hm=dd743742bbf5f8a7a78611df40a2b9f02ee419cf9edc95aa92051d15eba490ed&\" alt=\"YouTubeImage\"></body></html>";
+    }
+
+
+    // 'http://localhost:8080/download?link='+youtube_link+"&format="+download_format
+    // 129.152.4.113:25533
+
+    @RequestMapping(value = "download", method = RequestMethod.POST)
+    String download(@RequestParam("link") String link, @RequestParam("format") String format, HttpServletRequest request) {
+        String remoteAddress = null;
+        try {
+            remoteAddress = request.getRemoteAddr();
+        } catch (Exception e) {
+            return "";
+        }
+        if (remoteAddress != null) {
+            switch (format) {
+                case "mp4h": {
+                    YTDownloader.start_MP4_HIGH_download(link);
+                    break;
+                }
+                case "mp4l": {
+                    YTDownloader.start_MP4_LOW_download(link);
+                    break;
+                }
+                case "mp3a": {
+                    YTDownloader.start_MP3_download(link);
+                    break;
+                }
             }
         }
         return App.webpage;

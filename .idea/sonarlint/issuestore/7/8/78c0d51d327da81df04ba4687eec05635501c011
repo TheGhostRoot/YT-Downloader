@@ -1,9 +1,12 @@
 
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ü—Í‘8š”ñ»­1
-‰
-java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ü—Í‘8Â”ñ»­1
 j
-java:S5361"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Ÿê–¼øÿÿÿÿ8Ùıì»­1
-F	java:S106"+Replace this use of System.out by a logger.(†‰ÄP8Úıì»­1
-g
-java:S1128"ERemove this unused import 'com.github.felipeucelli.javatube.Youtube'.(šáÄµøÿÿÿÿ8Ï”ñ»­1
+java:S1871("HThis case's code block is the same as the block for the case on line 32.(ÃıÁµùÿÿÿÿ8öæüç­1
+e
+java:S1871$"HThis case's code block is the same as the block for the case on line 32.(»ßë¸8õæüç­1
+C	java:S131""Add a default case to this switch.(Ô§ßÉıÿÿÿÿ8öæüç­1
+N
+java:S1135!"2Complete the task associated to this TODO comment.(¿¤¿F8Òÿç­1
+N
+java:S1135%"2Complete the task associated to this TODO comment.(¼ĞÖY8Òÿç­1
+N
+java:S1135)"2Complete the task associated to this TODO comment.(ä¶Ê	8Òÿç­1

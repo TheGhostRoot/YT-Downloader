@@ -38,16 +38,12 @@ function removeVideoButtons() {
 }
 
 async function getVideoTitle(link) {
-    try {
            const response = await fetch("https://www.youtube.com/oembed?url="+link+"&format=json");
            if (!response.ok) {
                 return "";
            }
            var data = await response.json();
            return data["title"];
-    } catch (error) {
-        return "";
-    }
 }
 
 function isInVideos(link) {
@@ -81,17 +77,31 @@ function getLinkByTitle(title, n) {
       return videos.has(title) ? videos.get(title) : "";
 }
 
-function sendDownloadRequestmp4h() {
-       var link = getLinkByTitle(document.getElementById("mp4h").innerHTML, 11);
-       console.log(link);
+async function sendVideoToServer(youtube_link, download_format) {
+
+               const response = await fetch('http://localhost:25533/download?link='+youtube_link+"&format="+download_format, {
+                   method: 'POST'
+               });
+               return response;
 }
 
-function sendDownloadRequestmp4l() {
-        var link = getLinkByTitle(document.getElementById("mp4l").innerHTML, 10);
-        console.log(link);
+async function sendDownloadRequestmp4h() {
+       var youtube_link = getLinkByTitle(document.getElementById("mp4h").innerHTML, 11);
+       if (youtube_link.length > 0) {
+           const res = await sendVideoToServer(youtube_link, "mp4h");
+      }
 }
 
-function sendDownloadRequestmp3a() {
-        var link = getLinkByTitle(document.getElementById("mp3a").innerHTML, 6);
-        console.log(link);
+async function sendDownloadRequestmp4l() {
+        var youtube_link = getLinkByTitle(document.getElementById("mp4l").innerHTML, 10);
+        if (youtube_link.length > 0) {
+            const res = await sendVideoToServer(youtube_link, "mp4l");
+        }
+}
+
+async function sendDownloadRequestmp3a() {
+        var youtube_link = getLinkByTitle(document.getElementById("mp3a").innerHTML, 6);
+        if (youtube_link.length > 0) {
+             const res = await sendVideoToServer(youtube_link, "mp3a");
+        }
 }

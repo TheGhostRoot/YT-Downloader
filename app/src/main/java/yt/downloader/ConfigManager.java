@@ -14,7 +14,7 @@ public class ConfigManager {
 
 
     public ConfigManager() throws IOException {
-        for (String name : List.of("web/index.html", "config.yml", "web/styles.css", "web/app.js")) {
+        for (String name : List.of("web/index.html", "config.yml", "web/styles.css", "web/app.js", "videos/")) {
             if (!Files.exists(Path.of(name))) {
                 if (name.contains("/")) {
                     String sub = name.substring(0, name.lastIndexOf('.'));
