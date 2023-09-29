@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.File;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -19,6 +20,8 @@ public class App {
     public static String webpage;
     public static String style;
     public static String js;
+
+    public static HashMap<String, Long> progress = new HashMap<>();
 
 
     public static void main(String[] args) {

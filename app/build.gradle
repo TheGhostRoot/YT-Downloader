@@ -33,6 +33,7 @@ dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.yaml:snakeyaml:2.2'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
 
     implementation 'com.github.TheGhostRoot:JavaTube:a3db29e2e21e4fd5e219b7a29d4a942011a57196'
 }

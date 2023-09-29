@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>YouTube Downloader</title>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+
+<h1 class="neon pulsate">Welcome to YouTube Video Downloader</h1>
+<p>The whole application is written in Java</p>
+
+<form class="ytlinks">
+    <label>
+        <textarea id="links" rows="4" cols="50" placeholder="YouTube links here.. Separate them with new line."></textarea>
+    </label>
+</form>
+
+
+<button onclick='filterAndAddVideoButtons()'>Get Videos</button>
+<button onclick='addVideoButton("Chill Music")'>ADD</button>
+<button onclick='removeVideoButtons()'>RM</button>
+<button onclick='updateDownloadProgress("5%")'>PROGRESS</button>
+
+<div id="downloadbtn">
+
+</div>
+
+<p class="neon pulsate" id="progress">0%</p>
+
+</body>
+</html>
