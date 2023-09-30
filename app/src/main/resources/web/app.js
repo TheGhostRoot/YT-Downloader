@@ -75,10 +75,7 @@ function getLinkByTitle(title, n) {
 
 async function sendVideoToServer(youtube_link, download_format) {
 
-               const response = await fetch('http://localhost:25533/download?link='+youtube_link+"&format="+download_format, {
-                   method: 'POST'
-               });
-               return response;
+      await fetch('http://localhost:25533/download?link='+youtube_link+"&format="+download_format, {method: 'POST'});
 }
 
 
@@ -86,20 +83,20 @@ async function sendVideoToServer(youtube_link, download_format) {
 async function sendDownloadRequestmp4h() {
        var youtube_link = getLinkByTitle(document.getElementById("mp4h").innerHTML, 11);
        if (youtube_link.length > 0) {
-           const res = await sendVideoToServer(youtube_link, "mp4h");
+           await sendVideoToServer(youtube_link, "mp4h");
       }
 }
 
 async function sendDownloadRequestmp4l() {
         var youtube_link = getLinkByTitle(document.getElementById("mp4l").innerHTML, 10);
         if (youtube_link.length > 0) {
-            const res = await sendVideoToServer(youtube_link, "mp4l");
+            await sendVideoToServer(youtube_link, "mp4l");
         }
 }
 
 async function sendDownloadRequestmp3a() {
         var youtube_link = getLinkByTitle(document.getElementById("mp3a").innerHTML, 6);
         if (youtube_link.length > 0) {
-             const res = await sendVideoToServer(youtube_link, "mp3a");
+            await sendVideoToServer(youtube_link, "mp3a");
         }
 }

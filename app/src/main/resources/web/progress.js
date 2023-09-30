@@ -9,12 +9,13 @@ function pollProgress() {
         "Accept": "*/*"
     }
     })
-        .then(response => response.json())
+        .then(response => response.text())
         .then(data => {
-            updateDownloadProgress(data+"%")
+            console.log(data);
+            updateDownloadProgress(data);
         })
         .finally(() => {
-            setTimeout(pollProgress, 500);
+            setTimeout(pollProgress, 1000);
         });
 }
 

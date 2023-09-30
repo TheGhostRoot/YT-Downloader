@@ -28,45 +28,24 @@ public class AppController {
     String progressjs() {
         return App.progressJS;
     }
- // favicon.ico
+    // favicon.ico
 
 
-
-    // 'http://localhost:8080/download?link='+youtube_link+"&format="+download_format
     // 129.152.4.113:25533
-    // @RequestMapping(value = "download", method = RequestMethod.POST)
 
     @GetMapping("/downloader")
     String getProgress(HttpServletRequest request) {
         String remoteAddress = null;
         try {
             remoteAddress = request.getRemoteAddr();
-        } catch (Exception e) {
-            return "0";
-        }
+        } catch (Exception e) { return "No Videos To Download"; }
         if (remoteAddress != null) {
-            return Objects.requireNonNullElse(App.progress.get(remoteAddress), (short) 0).toString();
+            remoteAddress = remoteAddress == "0:0:0:0:0:0:0:1" ? remoteAddress : "127.0.0.1";
+            System.out.println(remoteAddress+" is in waiting "+App.IDs.values().contains(remoteAddress));
+            return App.IDs.values().contains(remoteAddress) ? "Downloading..." : "No Videos To Download";
         }
-        return "0";
+        return "No Videos To Download";
     }
-
-    public static class ProgressResponse {
-        private short progress;
-
-        public ProgressResponse(short progress) {
-            this.progress = progress;
-        }
-        public ProgressResponse() {
-            this.progress = 0;
-        }
-
-        public short getProgress() {
-            return this.progress;
-        }
-
-        // Getters and setters are not necessary here, but you can include them if needed
-    }
-
 
     @PostMapping("/download")
     String download(@RequestParam("link") String link, @RequestParam("format") String format, HttpServletRequest request) {
@@ -81,6 +60,10 @@ public class AppController {
                     t.setDaemon(true);
                     t.start();
          */
+
+         remoteAddress = remoteAddress == "0:0:0:0:0:0:0:1" ? remoteAddress : "127.0.0.1";
+         System.out.println("Download request from "+remoteAddress);
+
         if (remoteAddress != null) {
             YTDownloader.manage_IDs(remoteAddress, link, format);
         }
