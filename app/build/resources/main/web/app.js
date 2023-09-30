@@ -67,10 +67,6 @@ async function filterAndAddVideoButtons() {
     }
 }
 
-function updateDownloadProgress(percent) {
-      document.getElementById("progress").innerHTML = percent;
-}
-
 function getLinkByTitle(title, n) {
       n *= -1;
       title = title.slice(0, n);
@@ -84,6 +80,8 @@ async function sendVideoToServer(youtube_link, download_format) {
                });
                return response;
 }
+
+
 
 async function sendDownloadRequestmp4h() {
        var youtube_link = getLinkByTitle(document.getElementById("mp4h").innerHTML, 11);

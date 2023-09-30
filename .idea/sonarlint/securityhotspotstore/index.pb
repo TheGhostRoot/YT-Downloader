@@ -27,3 +27,15 @@ X
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 U
 %app/src/main/resources/web/index.html,3\c\3c951ac2ebf1057e3ef96382f1ffa2ae9fbc686a
+d
+4app/src/main/java/yt/downloader/WebSocketConfig.java,e\3\e374b5adb736462ff96ae2854187aa8dd7e3a9fa
+a
+1app/src/main/java/yt/downloader/YTDownloader.java,7\c\7c3fbbe593188ae65538599b0b66616a6cc9143c
+>
+app/config.yml,b\4\b47b423336fece2b62a769721396f21acb8fb336
+>
+app/web/app.js,d\6\d637f022084c7b10b2664ebe1c5e5ca7cbeba693
+B
+app/web/index.html,5\2\52926214d0e465d387db9d5d751e24cc844b88db
+B
+app/web/styles.css,b\9\b936782b4f9fd254bf26f1c30dc041c9534596a6

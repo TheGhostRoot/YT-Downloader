@@ -14,18 +14,20 @@ public class ConfigManager {
 
 
     public ConfigManager() throws IOException {
-        for (String name : List.of("web/index.html", "config.yml", "web/styles.css", "web/app.js", "videos/.")) {
-            if (!Files.exists(Path.of(name))) {
-                if (name.contains("/")) {
-                    String sub = name.substring(0, name.lastIndexOf('.'));
-                    int i = sub.lastIndexOf('/');
-                    File folders = new File(sub.substring(0, i == -1 ? sub.length() : i));
-                    if (!folders.exists()) {
-                        folders.mkdirs();
+        for (String name : List.of("web/index.html", "config.yml", "web/styles.css", "web/app.js", "videos/.", "web/progress.js")) {
+            try {
+                if (!Files.exists(Path.of(name))) {
+                    if (name.contains("/")) {
+                        String sub = name.substring(0, name.lastIndexOf('.'));
+                        int i = sub.lastIndexOf('/');
+                        File folders = new File(sub.substring(0, i == -1 ? sub.length() : i));
+                        if (!folders.exists()) {
+                            folders.mkdirs();
+                        }
                     }
+                    loadResource(name, name);
                 }
-                loadResource(name, name);
-            }
+            } catch (Exception e) {}
         }
 
         // Open a FileWriter for the specified file

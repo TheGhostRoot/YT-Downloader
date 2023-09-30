@@ -8,10 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.File;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 @SpringBootApplication
 public class App {
@@ -21,7 +18,21 @@ public class App {
     public static String style;
     public static String js;
 
+    public static String progressJS;
+
+    //  IP : Progress %
     public static HashMap<String, Long> progress = new HashMap<>();
+
+    public static Random random = new Random();
+
+    // ID : Link
+    public static HashMap<Long, String> links = new HashMap<>();
+
+    //public static List<Thread> th = new ArrayList<>();
+
+
+    // ID : IP Addr
+    public static HashMap<Long, String> IDs = new HashMap<>();
 
 
     public static void main(String[] args) {
@@ -29,7 +40,7 @@ public class App {
             configManager = new ConfigManager();
         } catch (Exception e) { e.printStackTrace(); }
 
-        for (String path : List.of("web/index.html", "web/styles.css", "web/app.js")) {
+        for (String path : List.of("web/index.html", "web/styles.css", "web/app.js", "web/progress.js")) {
             File file = new File(path);
             if (file.exists()) {
                 try (Scanner myReader = new Scanner(file)) {
@@ -38,8 +49,10 @@ public class App {
                         stringBuilder.append(myReader.nextLine());
                     }
                     myReader.close();
-                    if (path.endsWith(".js")) {
+                    if (path.endsWith("app.js")) {
                         js = stringBuilder.toString();
+                    } else if (path.endsWith("progress.js")) {
+                        progressJS = stringBuilder.toString();
                     } else if (path.endsWith(".css")){
                         style = stringBuilder.toString();
                     } else {
@@ -58,6 +71,9 @@ public class App {
                 }
             }
         }
+
+        //Executors.newScheduledThreadPool(1).scheduleAtFixedRate(() -> th.removeIf(t -> !t.isAlive()) ,
+         //       0, 1, TimeUnit.MINUTES);
 
         SpringApplication app = new SpringApplication(App.class);
         app.setDefaultProperties(Collections.singletonMap("server.port", "25533"));

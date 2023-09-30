@@ -1,6 +1,5 @@
 var image_url = "https://cdn.discordapp.com/attachments/779418496601686016/1156623723655348224/background.jpg?ex=6515a548&is=651453c8&hm=54a1d501eabd031cff961f91a8d087725cc4dbcf5b440eaae53358f1c54a80bc&";
 var videos = new Map();
-var stompClient = Stomp.over(new SockJS('/ws'));
 
 function addVideoButton(name) {
     var textnode = document.createElement("button");
@@ -68,10 +67,6 @@ async function filterAndAddVideoButtons() {
     }
 }
 
-function updateDownloadProgress(percent) {
-      document.getElementById("progress").innerHTML = percent;
-}
-
 function getLinkByTitle(title, n) {
       n *= -1;
       title = title.slice(0, n);
@@ -86,13 +81,6 @@ async function sendVideoToServer(youtube_link, download_format) {
                return response;
 }
 
-
-stompClient.connect({}, function (frame) {
-    stompClient.subscribe('/downloader', function (message) {
-        // Update your progress bar based on the message received
-        updateDownloadProgress(message.body+"%");
-    });
-});
 
 
 async function sendDownloadRequestmp4h() {
