@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="yt.downloader.AppControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-30T13:50:42" hostname="PC18" time="1.399">
+<testsuite name="yt.downloader.AppControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-30T14:38:26" hostname="PC18" time="1.258">
   <properties/>
-  <testcase name="getHello()" classname="yt.downloader.AppControllerTest" time="1.399"/>
-  <system-out><![CDATA[16:50:39.803 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [yt.downloader.AppControllerTest]: AppControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-16:50:40.157 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration yt.downloader.App for test class yt.downloader.AppControllerTest
+  <testcase name="getHello()" classname="yt.downloader.AppControllerTest" time="1.258"/>
+  <system-out><![CDATA[17:38:23.561 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [yt.downloader.AppControllerTest]: AppControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:38:23.770 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration yt.downloader.App for test class yt.downloader.AppControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,7 +13,7 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.0)
 
-2023-09-30T16:50:40.966+03:00  WARN 15072 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+2023-09-30T17:38:24.498+03:00  WARN 5672 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
 
 Found multiple occurrences of org.json.JSONObject on the class path:
 
@@ -22,12 +22,12 @@ Found multiple occurrences of org.json.JSONObject on the class path:
 
 You may wish to exclude one of them to ensure predictable runtime behavior
 
-2023-09-30T16:50:40.984+03:00  INFO 15072 --- [    Test worker] yt.downloader.AppControllerTest          : Starting AppControllerTest using Java 17.0.8.1 with PID 15072 (started by IT Step in C:\Users\IT Step\Desktop\CODY\YT-Downloader\app)
-2023-09-30T16:50:40.986+03:00  INFO 15072 --- [    Test worker] yt.downloader.AppControllerTest          : No active profile set, falling back to 1 default profile: "default"
-2023-09-30T16:50:42.538+03:00  INFO 15072 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-09-30T16:50:42.539+03:00  INFO 15072 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-09-30T16:50:42.544+03:00  INFO 15072 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2023-09-30T16:50:42.579+03:00  INFO 15072 --- [    Test worker] yt.downloader.AppControllerTest          : Started AppControllerTest in 2.082 seconds (process running for 5.281)
+2023-09-30T17:38:24.525+03:00  INFO 5672 --- [    Test worker] yt.downloader.AppControllerTest          : Starting AppControllerTest using Java 17.0.8.1 with PID 5672 (started by IT Step in C:\Users\IT Step\Desktop\CODY\YT-Downloader\app)
+2023-09-30T17:38:24.527+03:00  INFO 5672 --- [    Test worker] yt.downloader.AppControllerTest          : No active profile set, falling back to 1 default profile: "default"
+2023-09-30T17:38:26.328+03:00  INFO 5672 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-09-30T17:38:26.329+03:00  INFO 5672 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-09-30T17:38:26.333+03:00  INFO 5672 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-09-30T17:38:26.377+03:00  INFO 5672 --- [    Test worker] yt.downloader.AppControllerTest          : Started AppControllerTest in 2.334 seconds (process running for 4.514)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

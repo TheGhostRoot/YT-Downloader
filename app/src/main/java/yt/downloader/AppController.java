@@ -3,8 +3,6 @@ package yt.downloader;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Objects;
-
 @RestController
 public class AppController {
 
