@@ -20,15 +20,13 @@ public class App {
 
     public static String progressJS;
 
-    //  IP : Progress %
-    public static HashMap<String, Long> progress = new HashMap<>();
-
     public static Random random = new Random();
 
-    // ID : Link
-    public static HashMap<Long, String> links = new HashMap<>();
+    // ID :  Video title
+    public static HashMap<Long, String> titles = new HashMap<>();
 
-    //public static List<Thread> th = new ArrayList<>();
+    // ID :  Format name -> mp4 / mp3
+    public static HashMap<Long, String> formats = new HashMap<>();
 
 
     // ID : IP Addr
