@@ -18,6 +18,11 @@ public class YTDownloader {
             gen_id = App.random.nextLong();
         }
         App.IDs.put(gen_id, ip);
+        App.formats.put(gen_id, format);
+
+        // TODO Get title from API
+
+
         Long id = gen_id;
 
         switch (format) {

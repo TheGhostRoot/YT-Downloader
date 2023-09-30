@@ -22,6 +22,12 @@ public class App {
 
     public static Random random = new Random();
 
+    // ID :  Video title
+    public static HashMap<Long, String> titles = new HashMap<>();
+
+    // ID :  Format name -> mp4 / mp3
+    public static HashMap<Long, String> formats = new HashMap<>();
+
 
     // ID : IP Addr
     public static HashMap<Long, String> IDs = new HashMap<>();

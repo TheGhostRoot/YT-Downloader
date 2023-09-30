@@ -1,6 +1,17 @@
 package yt.downloader;
 
 import jakarta.servlet.http.HttpServletRequest;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -40,10 +51,31 @@ public class AppController {
         if (remoteAddress != null) {
             remoteAddress = remoteAddress == "0:0:0:0:0:0:0:1" ? remoteAddress : "127.0.0.1";
             System.out.println(remoteAddress+" is in waiting "+App.IDs.values().contains(remoteAddress));
-            return App.IDs.values().contains(remoteAddress) ? "Downloading..." : "No Videos To Download";
+            // count how many times the remoteAddress is in the App.IDs.values() and use this info to tell it where the download progress is.
+            // The server will send request to API that will tell the name of the video and store it with the ID
+            // 
+            return App.IDs.values().contains(remoteAddress) ? "Downloading...\nNAME\nFORMAT" : "No Videos To Download";
         }
         return "No Videos To Download";
     }
+
+    @GetMapping("/ask")
+    public ResponseEntity<Resource> download(String id, String format) throws IOException {
+
+        if (Files.exists(Path.of("videos/"+id))) {
+
+            File file = new File("videos/"+id+"."+format);
+
+            if (file.exists()) {
+                return ResponseEntity.ok()
+                        .contentLength(file.length())
+                        .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                        .body(new InputStreamResource(new FileInputStream(file)));
+            }
+        }
+        return (ResponseEntity<Resource>) ResponseEntity.badRequest();
+    }
+    
 
     @PostMapping("/download")
     String download(@RequestParam("link") String link, @RequestParam("format") String format, HttpServletRequest request) {
