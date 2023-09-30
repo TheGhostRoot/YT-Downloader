@@ -1,0 +1,14 @@
+
+~
+java:S11927"aDefine a constant instead of duplicating this literal "https://www.youtube.com/watch?v=" 3 times.(îïëŒ8Úğ¬®1
+j
+java:S11928"HDefine a constant instead of duplicating this literal "videos/" 6 times.(Î©å†øÿÿÿÿ8Úğ¬®1
+t
+java:S11929"RDefine a constant instead of duplicating this literal "https://youtu.be/" 3 times.(û¢¹Œşÿÿÿÿ8Úğ¬®1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ŸúÂ”ûÿÿÿÿ8ëğ¬®1
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä¿ÿß8îğ¬®1
+C	java:S131""Add a default case to this switch.(Ô§ßÉıÿÿÿÿ8òğ¬®1
+o	java:S1004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØùîÅıÿÿÿÿ8óğ¬®1
+o	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®¥Ê†ÿÿÿÿÿ8ùğ¬®1
+o	java:S100K"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È×±œûÿÿÿÿ8ığ¬®1

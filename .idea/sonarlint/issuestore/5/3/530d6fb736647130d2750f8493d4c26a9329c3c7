@@ -1,30 +1,58 @@
 
 ‚
-java:S1319"eThe type of "progress" should be an interface such as "Map" rather than the implementation "HashMap".(õ–·ö8Šî¡Š®1
+java:S1319"eThe type of "progress" should be an interface such as "Map" rather than the implementation "HashMap".(õ–·ö8»¡¬®1
+„
+java:S1319"bThe type of "links" should be an interface such as "Map" rather than the implementation "HashMap".(´å¡µüÿÿÿÿ8‚»¡¬®1
+‚
+java:S1319#"`The type of "IDs" should be an interface such as "Map" rather than the implementation "HashMap".(ÿõãĞıÿÿÿÿ8„»¡¬®1
 {
-java:S1104"YMake configManager a static final constant or non-public and provide accessors if needed.(ßÚöùÿÿÿÿ8‹î¡Š®1
+java:S1104"YMake configManager a static final constant or non-public and provide accessors if needed.(ßÚöùÿÿÿÿ8†»¡¬®1
 u
-java:S1104"SMake webpage a static final constant or non-public and provide accessors if needed.(‚Øà²üÿÿÿÿ8‹î¡Š®1
+java:S1104"SMake webpage a static final constant or non-public and provide accessors if needed.(‚Øà²üÿÿÿÿ8‡»¡¬®1
 n
-java:S1104"QMake style a static final constant or non-public and provide accessors if needed.(ÛÓ©¶8‹î¡Š®1
+java:S1104"QMake style a static final constant or non-public and provide accessors if needed.(ÛÓ©¶8‡»¡¬®1
 p
-java:S1104"NMake js a static final constant or non-public and provide accessors if needed.(²È×óûÿÿÿÿ8‹î¡Š®1
+java:S1104"NMake js a static final constant or non-public and provide accessors if needed.(²È×óûÿÿÿÿ8‡»¡¬®1
+r
+java:S1104"VMake progressJS a static final constant or non-public and provide accessors if needed.(»Í-8‡»¡¬®1
 q
-java:S1104"TMake progress a static final constant or non-public and provide accessors if needed.(õ–·ö8Œî¡Š®1
+java:S1104"TMake progress a static final constant or non-public and provide accessors if needed.(õ–·ö8‡»¡¬®1
+t
+java:S1104"RMake random a static final constant or non-public and provide accessors if needed.(×‘éµùÿÿÿÿ8‡»¡¬®1
+s
+java:S1104"QMake links a static final constant or non-public and provide accessors if needed.(´å¡µüÿÿÿÿ8‡»¡¬®1
+q
+java:S1104#"OMake IDs a static final constant or non-public and provide accessors if needed.(ÿõãĞıÿÿÿÿ8‡»¡¬®1
 U
-java:S1444"3Make this "public static configManager" field final(ßÚöùÿÿÿÿ8Œî¡Š®1
+java:S1444"3Make this "public static configManager" field final(ßÚöùÿÿÿÿ8‡»¡¬®1
 O
-java:S1444"-Make this "public static webpage" field final(‚Øà²üÿÿÿÿ8Œî¡Š®1
+java:S1444"-Make this "public static webpage" field final(‚Øà²üÿÿÿÿ8‡»¡¬®1
 H
-java:S1444"+Make this "public static style" field final(ÛÓ©¶8Œî¡Š®1
+java:S1444"+Make this "public static style" field final(ÛÓ©¶8‡»¡¬®1
 J
-java:S1444"(Make this "public static js" field final(²È×óûÿÿÿÿ8Œî¡Š®1
+java:S1444"(Make this "public static js" field final(²È×óûÿÿÿÿ8‡»¡¬®1
+L
+java:S1444"0Make this "public static progressJS" field final(»Í-8‡»¡¬®1
 K
-java:S1444".Make this "public static progress" field final(õ–·ö8Œî¡Š®1
+java:S1444".Make this "public static progress" field final(õ–·ö8‡»¡¬®1
+N
+java:S1444",Make this "public static random" field final(×‘éµùÿÿÿÿ8‰»¡¬®1
+M
+java:S1444"+Make this "public static links" field final(´å¡µüÿÿÿÿ8‰»¡¬®1
+K
+java:S1444#")Make this "public static IDs" field final(ÿõãĞıÿÿÿÿ8‰»¡¬®1
+p
+java:S3008#"NRename this field "IDs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿõãĞıÿÿÿÿ8ï¼¡¬®1
 :
-java:S2386"Make this member "protected".(õ–·ö8©ö¡Š®1
+java:S2386"Make this member "protected".(õ–·ö8ï¼¡¬®1
+?
+java:S2386"Make this member "protected".(´å¡µüÿÿÿÿ8ï¼¡¬®1
+?
+java:S2386#"Make this member "protected".(ÿõãĞıÿÿÿÿ8ï¼¡¬®1
+X	java:S125"<This block of commented-out lines of code should be removed.(ã­é¾8ó¼¡¬®1
 o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(Çµí‘8óö¡Š®1
+java:S3776&"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Çµí‘8õ¼¡¬®1
 
-java:S4087("bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(Œ¯‰Â8÷¡Š®1
-X	java:S125E"<This block of commented-out lines of code should be removed.(÷Ú‰õ8©÷¡Š®1
+java:S40873"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(Œ¯‰Â8ø¼¡¬®1
+X	java:S125L"<This block of commented-out lines of code should be removed.(ğ •Û8ü¼¡¬®1
+X	java:S125U"<This block of commented-out lines of code should be removed.(÷Ú‰õ8ƒ½¡¬®1

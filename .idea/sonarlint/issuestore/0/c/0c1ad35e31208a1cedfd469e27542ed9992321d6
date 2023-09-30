@@ -1,7 +1,10 @@
 
 e
-java:S20955"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(ý©»Å8ƒýìº­1
-X	java:S125 "<This block of commented-out lines of code should be removed.(ÏÙáÚ8šýìº­1
-X	java:S125#"<This block of commented-out lines of code should be removed.(ˆ©é8šýìº­1
-]	java:S125&"<This block of commented-out lines of code should be removed.(©‹¼àüÿÿÿÿ8šýìº­1
-]	java:S125("<This block of commented-out lines of code should be removed.(˜À¾Ÿûÿÿÿÿ8šýìº­1
+java:S20957"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(ý©»Å8ÄÆµ§®1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(©ÜÞ½úÿÿÿÿ8ÉÆµ§®1
+J	java:S108")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8ÕÆµ§®1
+X	java:S125""<This block of commented-out lines of code should be removed.(ÏÙáÚ8àÆµ§®1
+X	java:S125%"<This block of commented-out lines of code should be removed.(ˆ©é8âÆµ§®1
+]	java:S125("<This block of commented-out lines of code should be removed.(©‹¼àüÿÿÿÿ8ãÆµ§®1
+]	java:S125*"<This block of commented-out lines of code should be removed.(˜À¾Ÿûÿÿÿÿ8äÆµ§®1
