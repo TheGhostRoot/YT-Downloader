@@ -39,7 +39,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
 
     implementation 'com.github.TheGhostRoot:JavaTube:a3db29e2e21e4fd5e219b7a29d4a942011a57196'
-    implementation files('libs/jave-1.0.2.jar')
+    //implementation files('libs/jave-1.0.2.jar')
 
 }
 

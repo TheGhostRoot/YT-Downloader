@@ -2,10 +2,6 @@ package yt.downloader;
 
 import com.github.felipeucelli.javatube.Stream;
 import com.github.felipeucelli.javatube.Youtube;
-import it.sauronsoftware.jave.AudioAttributes;
-import it.sauronsoftware.jave.Encoder;
-import it.sauronsoftware.jave.EncoderException;
-import it.sauronsoftware.jave.EncodingAttributes;
 
 import java.io.File;
 
@@ -102,28 +98,13 @@ public class YTDownloader {
         } catch (Exception e) {}
     }
 
-    public static void convertMp4ToMp3(String sourcePath, String outputPath){
-        if (sourcePath == null || outputPath == null) { return; }
-
+    public static boolean convertMp4ToMp3(String sourcePath, String outputPath){
         File source = new File(sourcePath);
-        if (!source.exists() || !source.isFile()) { return; }
+        if (!source.exists() || !source.isFile()) { return false; }
 
         File output = new File(outputPath);
-        if (!output.exists() || !output.isFile()) { return; }
+        if (output.exists() || output.isFile()) { return false; }
 
-        Encoder forMusic = new Encoder();
-
-        EncodingAttributes specifications = new EncodingAttributes();
-        specifications.setFormat("mp3");
-        //audioAttribute obj
-        AudioAttributes a = new AudioAttributes();
-        a.setVolume(256); //default
-        a.setCodec("mp2");
-
-        specifications.setAudioAttributes(a);
-
-        try{
-            forMusic.encode(source, output, specifications);
-        } catch (EncoderException ignored) {}
+        return source.renameTo(output);
     }
 }
