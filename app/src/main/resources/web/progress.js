@@ -1,3 +1,7 @@
+var ID = "";
+var title = "";
+var format = "";
+
 function updateDownloadProgress(percent) {
       document.getElementById("progress").innerHTML = percent;
 }
@@ -15,17 +19,13 @@ function addDownloadBtn(name, format) {
     document.getElementById("downloadbtn").appendChild(newline);
 }
 
-async function askServerToDownload(name, format) {
+async function askServerToDownload() {
 
-    var link = videos.get(name);
+    if (ID === null || format === null || ID.length == 0 || format.length == 0) { return; }
 
-    if (link.startsWith("https://www.youtube.com/watch?v=")) {
-        link = link.substring(32, 43);
-    } else if (link.startsWith("https://youtu.be/")) {
-        link = link.substring(17, 28);
-    }
+    const response = await fetch("http://localhost:25533/ask?id="+ID+"&format="+format, {method: 'GET'});
+    addDownloadBtn(title, format);
 
-    const response = await fetch("http://localhost:25533/ask");
     if (!response.ok) {
         document.getElementById("askdownload").innerHTML = "Can't download file";
     }
@@ -38,13 +38,18 @@ async function pollProgress() {
         "Accept": "*/*"
     }
     })
-    .then(response => response.text())
+    .then(response => response.json())
     .then(async data => {
-        var splited = data.split("\n");
-        if (data != document.getElementById("progress").innerHTML) {
-            await askServerToDownload(splited[1], splited[2]);
+        var d = document.getElementById("progress").innerHTML;
+        if (data["stats"] == "Downloading...") {
+            ID = data["link"];
+            title = data["title"];
+            format = data["format"];
         }
-        updateDownloadProgress(splited[0]);
+        if ((data["stats"] != d) && (d == "Downloading...")) {
+            await askServerToDownload(data["link"], data["format"], data["title"]);
+        }
+        updateDownloadProgress(data["stats"]);
     })
     .finally(() => {
         setTimeout(pollProgress, 1000);

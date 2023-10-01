@@ -6,7 +6,7 @@ import com.github.felipeucelli.javatube.Youtube;
 public class YTDownloader {
 
 
-    private static void progress(Long value) { System.out.println(value); }
+    private static void progress(Long value) {}
 
     // https://www.youtube.com/watch?v=tvKRrT11ugg
     // A5ovL4HTwDs
@@ -18,33 +18,40 @@ public class YTDownloader {
             gen_id = App.random.nextLong();
         }
         App.IDs.put(gen_id, ip);
-        App.formats.put(gen_id, format);
+        App.formats.put(gen_id, format.startsWith("mp4") ? "mp4" : "mp3");
+        App.links.put(gen_id, link);
 
-        // TODO Get title from API
-
+        try {
+            Youtube youtube = new Youtube(link);
+            App.titles.put(gen_id, youtube.getTitle());
+        } catch (Exception e) {  App.titles.put(gen_id, "Can't get video Title."); }
 
         Long id = gen_id;
 
         switch (format) {
-            case "mp4h": {
+            case "mp4h" -> {
                 Thread th = new Thread(() -> YTDownloader.MP4_HIGH_download(id, link));
                 th.setDaemon(true);
                 th.start();
-                break;
             }
-            case "mp4l": {
+            case "mp4l" -> {
                 Thread th = new Thread(() -> YTDownloader.MP4_LOW_download(id, link));
                 th.setDaemon(true);
                 th.start();
-                break;
             }
-            case "mp3a": {
-                Thread th = new Thread(() -> YTDownloader.MP3_download(id ,link));
+            case "mp3a" -> {
+                Thread th = new Thread(() -> YTDownloader.MP3_download(id, link));
                 th.setDaemon(true);
                 th.start();
-                break;
             }
         }
+    }
+
+    private static void cleanUp(Long gen_id) {
+        App.IDs.remove(gen_id);
+        App.links.remove(gen_id);
+        App.formats.remove(gen_id);
+        App.titles.remove(gen_id);
     }
 
     private static void MP4_HIGH_download(Long gen_id, String link) {
@@ -55,8 +62,8 @@ public class YTDownloader {
             } else if (link.startsWith("https://youtu.be/")) {
                 stream.download("videos/", link.substring(17, 28), YTDownloader::progress);
             }
-            App.IDs.remove(gen_id);
-        } catch (Exception e) { e.printStackTrace(); }
+            cleanUp(gen_id);
+        } catch (Exception e) {}
     }
 
     private static void MP4_LOW_download(Long gen_id, String link) {
@@ -67,8 +74,8 @@ public class YTDownloader {
             } else if (link.startsWith("https://youtu.be/")) {
                 stream.download("videos/", link.substring(17, 28), YTDownloader::progress);
             }
-            App.IDs.remove(gen_id);
-        } catch (Exception e) { e.printStackTrace(); }
+            cleanUp(gen_id);
+        } catch (Exception e) {}
 
     }
 
@@ -80,7 +87,7 @@ public class YTDownloader {
             } else if (link.startsWith("https://youtu.be/")) {
                 stream.download("videos/", link.substring(17, 28), YTDownloader::progress);
             }
-            App.IDs.remove(gen_id);
-        } catch (Exception e) { e.printStackTrace(); }
+            cleanUp(gen_id);
+        } catch (Exception e) {}
     }
 }

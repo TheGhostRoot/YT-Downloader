@@ -28,6 +28,8 @@ public class App {
     // ID :  Format name -> mp4 / mp3
     public static HashMap<Long, String> formats = new HashMap<>();
 
+    public static HashMap<Long, String> links = new HashMap<>();
+
 
     // ID : IP Addr
     public static HashMap<Long, String> IDs = new HashMap<>();
@@ -44,7 +46,7 @@ public class App {
                 try (Scanner myReader = new Scanner(file)) {
                     StringBuilder stringBuilder = new StringBuilder();
                     while (myReader.hasNextLine()) {
-                        stringBuilder.append(myReader.nextLine());
+                        stringBuilder.append(myReader.nextLine()).append("\n");
                     }
                     myReader.close();
                     if (path.endsWith("app.js")) {
