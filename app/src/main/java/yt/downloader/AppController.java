@@ -4,7 +4,6 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -48,13 +47,13 @@ public class AppController {
     HashMap<String, String> getProgress(HttpServletRequest request) {
         String remoteAddress = null;
         HashMap<String, String> data = new HashMap<>();
+        data.put("stats", "No Videos To Download");
+        data.put("link", "");
+        data.put("format", "");
+        data.put("title", "");
         try {
             remoteAddress = request.getRemoteAddr();
         } catch (Exception e) {
-            data.put("stats", "No Videos To Download");
-            data.put("link", "");
-            data.put("format", "");
-            data.put("title", "");
             return data;
         }
         if (remoteAddress != null) {
@@ -80,19 +79,10 @@ public class AppController {
                 }
                 data.put("format", App.formats.get(id));
                 data.put("title", App.titles.get(id));
-            } else {
-                data.put("stats", "No Videos To Download");
-                data.put("link", "");
-                data.put("format", "");
-                data.put("title", "");
             }
 
             return data;
         }
-        data.put("stats", "No Videos To Download");
-        data.put("link", "");
-        data.put("format", "");
-        data.put("title", "");
         return data;
     }
 
@@ -100,10 +90,8 @@ public class AppController {
     public ResponseEntity<Resource> download(String id, String format) {
         if (id.contains("http")) { return ResponseEntity.noContent().build();}
 
-        if (Files.exists(Path.of("videos/"+id))) {
-
+        if (Files.exists(Path.of("videos/"+id+"."+format))) {
             File file = new File("videos/"+id+"."+format);
-
             if (file.exists() && file.isFile()) {
                 try {
                     return ResponseEntity.ok()
@@ -128,10 +116,7 @@ public class AppController {
             return "";
         }
 
-         remoteAddress = "0:0:0:0:0:0:0:1".equals(remoteAddress) ? "127.0.0.1" : remoteAddress;
-         System.out.println("Download request from "+remoteAddress);
-
-         YTDownloader.manage_IDs(remoteAddress, link, format);
+         YTDownloader.manage_IDs("0:0:0:0:0:0:0:1".equals(remoteAddress) ? "127.0.0.1" : remoteAddress, link, format);
 
          return App.webpage;
     }
