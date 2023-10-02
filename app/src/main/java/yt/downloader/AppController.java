@@ -41,8 +41,6 @@ public class AppController {
     // favicon.ico
 
 
-    // 129.152.4.113:25533
-
     @GetMapping("/downloader")
     HashMap<String, String> getProgress(HttpServletRequest request) {
         String remoteAddress = null;
@@ -58,8 +56,6 @@ public class AppController {
         }
         if (remoteAddress != null) {
             remoteAddress = "0:0:0:0:0:0:0:1".equals(remoteAddress) ? "127.0.0.1" : remoteAddress;
-            // count how many times the remoteAddress is in the App.IDs.values() and use this info to tell it where the download progress is.
-            // The server will send request to API that will tell the name of the video and store it with the ID
             long id = 0;
             for (Map.Entry<Long, String> entry : App.IDs.entrySet()) {
                 if (entry.getValue().equals(remoteAddress)) {
