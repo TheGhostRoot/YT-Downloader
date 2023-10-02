@@ -41,8 +41,6 @@ public class AppController {
     // favicon.ico
 
 
-    // 129.152.4.113:25533
-
     @GetMapping("/downloader")
     HashMap<String, String> getProgress(HttpServletRequest request) {
         String remoteAddress = null;
@@ -51,25 +49,18 @@ public class AppController {
         data.put("link", "");
         data.put("format", "");
         data.put("title", "");
-        try {
-            remoteAddress = request.getRemoteAddr();
-        } catch (Exception e) {
-            return data;
-        }
+
+        try { remoteAddress = request.getRemoteAddr(); } catch (Exception e) { return data; }
+
         if (remoteAddress != null) {
             remoteAddress = "0:0:0:0:0:0:0:1".equals(remoteAddress) ? "127.0.0.1" : remoteAddress;
-            // count how many times the remoteAddress is in the App.IDs.values() and use this info to tell it where the download progress is.
-            // The server will send request to API that will tell the name of the video and store it with the ID
-            long id = 0;
-            for (Map.Entry<Long, String> entry : App.IDs.entrySet()) {
-                if (entry.getValue().equals(remoteAddress)) {
-                    id = entry.getKey();
-                    break;
-                }
-            }
+
+            if (App.isOverTheLimitIP(remoteAddress)) { return data; }
+
+            long first_request_id = App.getAll_ID_from_IP(remoteAddress).get(0);
             if (App.IDs.containsValue(remoteAddress)) {
                 data.put("stats", "Downloading...");
-                String link = App.links.get(id);
+                String link = App.links.get(first_request_id);
                 if (link.startsWith("https://www.youtube.com/watch?v=")) {
                     data.put("link", link.substring(32, 43));
                 } else if (link.startsWith("https://youtu.be/")) {
@@ -77,33 +68,40 @@ public class AppController {
                 } else {
                     data.put("link", "");
                 }
-                data.put("format", App.formats.get(id));
-                data.put("title", App.titles.get(id));
+                data.put("format", App.formats.get(first_request_id));
+                data.put("title", App.titles.get(first_request_id));
             }
-
             return data;
         }
         return data;
     }
 
     @GetMapping("/ask")
-    public ResponseEntity<Resource> download(String id, String format) {
-        if (id.contains("http")) { return ResponseEntity.noContent().build();}
+    public ResponseEntity<Resource> ask(String id, String format, HttpServletRequest request) {
+        ResponseEntity<Resource> emptyContent = ResponseEntity.noContent().build();
+        if (id.contains("http")) { return emptyContent; }
 
-        if (Files.exists(Path.of("videos/"+id+"."+format))) {
-            File file = new File("videos/"+id+"."+format);
-            if (file.exists() && file.isFile()) {
-                try {
-                    return ResponseEntity.ok()
-                            .contentLength(file.length())
-                            .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                            .body(new InputStreamResource(new FileInputStream(file)));
-                } catch (Exception e) {
-                    return ResponseEntity.noContent().build();
+        String remoteAddress = null;
+        try { remoteAddress = request.getRemoteAddr(); } catch (Exception e) { return emptyContent; }
+
+        if (remoteAddress != null) {
+            remoteAddress = "0:0:0:0:0:0:0:1".equals(remoteAddress) ? "127.0.0.1" : remoteAddress;
+
+            if (App.isOverTheLimitIP(remoteAddress)) { return emptyContent; }
+
+            if (Files.exists(Path.of("videos/" + id + "." + format))) {
+                File file = new File("videos/" + id + "." + format);
+                if (file.exists() && file.isFile()) {
+                    try {
+                        return ResponseEntity.ok()
+                                .contentLength(file.length())
+                                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                                .body(new InputStreamResource(new FileInputStream(file)));
+                    } catch (Exception e) { return emptyContent; }
                 }
             }
         }
-        return ResponseEntity.noContent().build();
+        return emptyContent;
     }
     
 

@@ -46,28 +46,28 @@ async function askServerToDownload() {
 }
 
 function pollProgress() {
-    fetch('http://localhost:25533/downloader', {
-    method: "GET",
-    headers: {
-        "Accept": "*/*"
-    }
-    })
-    .then(response => response.json())
-    .then(async data => {
-        var d = document.getElementById("progress").innerHTML;
-        if (data["stats"] == "Downloading...") {
-            ID = data["link"];
-            title = data["title"];
-            format = data["format"];
+        fetch('http://localhost:25533/downloader', {
+        method: "GET",
+        headers: {
+            "Accept": "*/*"
         }
-        if ((data["stats"] != d) && (d == "Downloading...")) {
-            addDownloadBtn(title, format);
-        }
-        updateDownloadProgress(data["stats"]);
-    })
-    .finally(() => {
-        setTimeout(pollProgress, 1000);
-    });
+        })
+        .then(response => response.json())
+        .then(async data => {
+            var d = document.getElementById("progress").innerHTML;
+            if (data["stats"] == "Downloading...") {
+                ID = data["link"];
+                title = data["title"];
+                format = data["format"];
+            }
+            if ((data["stats"] != d) && (d == "Downloading...")) {
+                addDownloadBtn(title, format);
+            }
+            updateDownloadProgress(data["stats"]);
+        })
+        .finally(() => {
+            setTimeout(pollProgress, 1000);
+        });
 }
 
 

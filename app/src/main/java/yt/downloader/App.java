@@ -30,6 +30,8 @@ public class App {
 
     public static HashMap<Long, String> links = new HashMap<>();
 
+    public static HashMap<String, Long> visitedTimes = new HashMap<>();
+
 
     // ID : IP Addr
     public static HashMap<Long, String> IDs = new HashMap<>();
@@ -72,9 +74,6 @@ public class App {
             }
         }
 
-        //Executors.newScheduledThreadPool(1).scheduleAtFixedRate(() -> th.removeIf(t -> !t.isAlive()) ,
-         //       0, 1, TimeUnit.MINUTES);
-
         SpringApplication app = new SpringApplication(App.class);
         app.setDefaultProperties(Collections.singletonMap("server.port", "25533"));
         app.run(args);
@@ -82,5 +81,21 @@ public class App {
     }
 
 
-    // background-image: url(\""+image_url+"\");background-repeat: no-repeat;background-position: left;padding-left: 250px;font-weight: bold;background-size: 100%;
+    public static boolean isOverTheLimitIP(String ip) {
+        if (visitedTimes.containsKey(ip) && visitedTimes.get(ip) >= 5L) {
+            return true;
+        } else {
+            if (visitedTimes.containsKey(ip)) {
+                visitedTimes.put(ip, visitedTimes.get(ip)+1);
+            } else {
+                visitedTimes.put(ip, 1L);
+            }
+            return false;
+        }
+    }
+
+    public static List<Long> getAll_ID_from_IP(String ip) {
+        return App.IDs.keySet().stream().filter(id -> App.IDs.get(id).equals(ip)).toList();
+    }
+
 }
