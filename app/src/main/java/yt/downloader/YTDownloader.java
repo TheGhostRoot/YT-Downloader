@@ -24,8 +24,7 @@ public class YTDownloader {
         App.links.put(gen_id, link);
 
         try {
-            Youtube youtube = new Youtube(link);
-            App.titles.put(gen_id, youtube.getTitle());
+            App.titles.put(gen_id, new Youtube(link).getTitle());
         } catch (Exception e) {  App.titles.put(gen_id, "Can't get video Title."); }
 
         Long id = gen_id;

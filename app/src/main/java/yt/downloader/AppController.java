@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -57,8 +57,9 @@ public class AppController {
 
             if (App.isOverTheLimitIP(remoteAddress)) { return data; }
 
-            long first_request_id = App.getAll_ID_from_IP(remoteAddress).get(0);
-            if (App.IDs.containsValue(remoteAddress)) {
+            List<Long> all_ids = App.getAll_ID_from_IP(remoteAddress);
+            if (!all_ids.isEmpty()) {
+                long first_request_id = all_ids.get(0);
                 data.put("stats", "Downloading...");
                 String link = App.links.get(first_request_id);
                 if (link.startsWith("https://www.youtube.com/watch?v=")) {
@@ -108,13 +109,14 @@ public class AppController {
     @PostMapping("/download")
     String download(@RequestParam("link") String link, @RequestParam("format") String format, HttpServletRequest request) {
         String remoteAddress = null;
-        try {
-            remoteAddress = request.getRemoteAddr();
-        } catch (Exception e) {
-            return "";
-        }
 
-         YTDownloader.manage_IDs("0:0:0:0:0:0:0:1".equals(remoteAddress) ? "127.0.0.1" : remoteAddress, link, format);
+        try { remoteAddress = request.getRemoteAddr(); } catch (Exception e) { return App.webpage; }
+
+        remoteAddress = "0:0:0:0:0:0:0:1".equals(remoteAddress) ? "127.0.0.1" : remoteAddress;
+
+        if (App.isOverTheLimitIP(remoteAddress)) { return App.webpage; }
+
+         YTDownloader.manage_IDs(remoteAddress, link, format);
 
          return App.webpage;
     }

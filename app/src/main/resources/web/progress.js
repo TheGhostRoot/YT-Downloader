@@ -45,6 +45,33 @@ async function askServerToDownload() {
 
 }
 
+function checks_If_contains_ID(value) {
+    for (var id of IDs) {
+        if (id == value) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function checks_If_contains_Title(value) {
+    for (var title of titles) {
+        if (title == value) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function checks_If_contains_Format(value) {
+    for (var format of formats) {
+        if (format == value) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function pollProgress() {
         fetch('http://localhost:25533/downloader', {
         method: "GET",
@@ -56,7 +83,7 @@ function pollProgress() {
         .then(async data => {
             var d = document.getElementById("progress").innerHTML;
             if (data["stats"] == "Downloading...") {
-                ID = data["link"];
+                ID = data["link"]
                 title = data["title"];
                 format = data["format"];
             }

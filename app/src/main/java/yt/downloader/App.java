@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.File;
 import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
 public class App {
@@ -30,6 +32,7 @@ public class App {
 
     public static HashMap<Long, String> links = new HashMap<>();
 
+    // IP Addr : Amount of times
     public static HashMap<String, Long> visitedTimes = new HashMap<>();
 
 
@@ -74,6 +77,16 @@ public class App {
             }
         }
 
+        Runnable helloRunnable = () -> {
+            for (String ip : new ArrayList<>(visitedTimes.keySet())) {
+                if (visitedTimes.containsKey(ip) && visitedTimes.get(ip) > 0) {
+                    visitedTimes.put(ip, visitedTimes.get(ip)-1);
+                }
+            }
+        };
+
+        Executors.newScheduledThreadPool(1).scheduleAtFixedRate(helloRunnable, 0, 1, TimeUnit.SECONDS);
+
         SpringApplication app = new SpringApplication(App.class);
         app.setDefaultProperties(Collections.singletonMap("server.port", "25533"));
         app.run(args);
@@ -85,6 +98,13 @@ public class App {
         if (visitedTimes.containsKey(ip) && visitedTimes.get(ip) >= 5L) {
             return true;
         } else {
+
+            if (1 < getAll_ID_from_IP(ip).stream().filter(id -> formats.get(id).equals("mp4") ||
+                    formats.get(id).equals("mp3")).count()) {
+
+                return true;
+            }
+
             if (visitedTimes.containsKey(ip)) {
                 visitedTimes.put(ip, visitedTimes.get(ip)+1);
             } else {

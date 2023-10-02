@@ -45,29 +45,56 @@ async function askServerToDownload() {
 
 }
 
-function pollProgress() {
-    fetch('http://localhost:25533/downloader', {
-    method: "GET",
-    headers: {
-        "Accept": "*/*"
+function checks_If_contains_ID(value) {
+    for (var id of IDs) {
+        if (id == value) {
+            return true;
+        }
     }
-    })
-    .then(response => response.json())
-    .then(async data => {
-        var d = document.getElementById("progress").innerHTML;
-        if (data["stats"] == "Downloading...") {
-            ID = data["link"];
-            title = data["title"];
-            format = data["format"];
+    return false;
+}
+
+function checks_If_contains_Title(value) {
+    for (var title of titles) {
+        if (title == value) {
+            return true;
         }
-        if ((data["stats"] != d) && (d == "Downloading...")) {
-            addDownloadBtn(title, format);
+    }
+    return false;
+}
+
+function checks_If_contains_Format(value) {
+    for (var format of formats) {
+        if (format == value) {
+            return true;
         }
-        updateDownloadProgress(data["stats"]);
-    })
-    .finally(() => {
-        setTimeout(pollProgress, 1000);
-    });
+    }
+    return false;
+}
+
+function pollProgress() {
+        fetch('http://localhost:25533/downloader', {
+        method: "GET",
+        headers: {
+            "Accept": "*/*"
+        }
+        })
+        .then(response => response.json())
+        .then(async data => {
+            var d = document.getElementById("progress").innerHTML;
+            if (data["stats"] == "Downloading...") {
+                ID = data["link"]
+                title = data["title"];
+                format = data["format"];
+            }
+            if ((data["stats"] != d) && (d == "Downloading...")) {
+                addDownloadBtn(title, format);
+            }
+            updateDownloadProgress(data["stats"]);
+        })
+        .finally(() => {
+            setTimeout(pollProgress, 1000);
+        });
 }
 
 
