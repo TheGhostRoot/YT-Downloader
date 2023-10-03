@@ -23,6 +23,7 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
     maven { url "https://jitpack.io" }
+    maven { url 'https://repo.spring.io/milestone' }
     flatDir {
         dirs 'libs'
     }
@@ -39,6 +40,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
 
     implementation 'com.github.TheGhostRoot:JavaTube:a3db29e2e21e4fd5e219b7a29d4a942011a57196'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation "org.springframework.security:spring-security-web"
+    implementation "org.springframework.security:spring-security-config"
     //implementation files('libs/jave-1.0.2.jar')
 
 }

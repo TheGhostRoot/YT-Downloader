@@ -1,65 +1,72 @@
 
 …
-java:S1319"cThe type of "titles" should be an interface such as "Map" rather than the implementation "HashMap".(Ğï¥÷ûÿÿÿÿ8Üî¯Ö®1
+java:S1319"cThe type of "titles" should be an interface such as "Map" rather than the implementation "HashMap".(Ğï¥÷ûÿÿÿÿ8ä’ñ…¯1
 †
-java:S1319"dThe type of "formats" should be an interface such as "Map" rather than the implementation "HashMap".(“îœúÿÿÿÿ8İî¯Ö®1
+java:S1319"dThe type of "formats" should be an interface such as "Map" rather than the implementation "HashMap".(“îœúÿÿÿÿ8ä’ñ…¯1
 „
-java:S1319"bThe type of "links" should be an interface such as "Map" rather than the implementation "HashMap".(´å¡µüÿÿÿÿ8İî¯Ö®1
+java:S1319!"bThe type of "links" should be an interface such as "Map" rather than the implementation "HashMap".(´å¡µüÿÿÿÿ8å’ñ…¯1
+‹
+java:S1319$"iThe type of "visitedTimes" should be an interface such as "Map" rather than the implementation "HashMap".(§ÄŠûÿÿÿÿ8å’ñ…¯1
 ‚
-java:S1319#"`The type of "IDs" should be an interface such as "Map" rather than the implementation "HashMap".(ÿõãĞıÿÿÿÿ8İî¯Ö®1
+java:S1319("`The type of "IDs" should be an interface such as "Map" rather than the implementation "HashMap".(ÿõãĞıÿÿÿÿ8å’ñ…¯1
 {
-java:S1104"YMake configManager a static final constant or non-public and provide accessors if needed.(ßÚöùÿÿÿÿ8Şî¯Ö®1
+java:S1104"YMake configManager a static final constant or non-public and provide accessors if needed.(ßÚöùÿÿÿÿ8æ’ñ…¯1
 u
-java:S1104"SMake webpage a static final constant or non-public and provide accessors if needed.(‚Øà²üÿÿÿÿ8Şî¯Ö®1
+java:S1104"SMake webpage a static final constant or non-public and provide accessors if needed.(‚Øà²üÿÿÿÿ8æ’ñ…¯1
 n
-java:S1104"QMake style a static final constant or non-public and provide accessors if needed.(ÛÓ©¶8Şî¯Ö®1
+java:S1104"QMake style a static final constant or non-public and provide accessors if needed.(ÛÓ©¶8æ’ñ…¯1
 p
-java:S1104"NMake js a static final constant or non-public and provide accessors if needed.(²È×óûÿÿÿÿ8Şî¯Ö®1
+java:S1104"NMake js a static final constant or non-public and provide accessors if needed.(²È×óûÿÿÿÿ8æ’ñ…¯1
 r
-java:S1104"VMake progressJS a static final constant or non-public and provide accessors if needed.(»Í-8Şî¯Ö®1
+java:S1104"VMake progressJS a static final constant or non-public and provide accessors if needed.(»Í-8æ’ñ…¯1
 t
-java:S1104"RMake random a static final constant or non-public and provide accessors if needed.(×‘éµùÿÿÿÿ8Şî¯Ö®1
+java:S1104"RMake random a static final constant or non-public and provide accessors if needed.(×‘éµùÿÿÿÿ8æ’ñ…¯1
 t
-java:S1104"RMake titles a static final constant or non-public and provide accessors if needed.(Ğï¥÷ûÿÿÿÿ8Şî¯Ö®1
+java:S1104"RMake titles a static final constant or non-public and provide accessors if needed.(Ğï¥÷ûÿÿÿÿ8æ’ñ…¯1
 u
-java:S1104"SMake formats a static final constant or non-public and provide accessors if needed.(“îœúÿÿÿÿ8Şî¯Ö®1
+java:S1104"SMake formats a static final constant or non-public and provide accessors if needed.(“îœúÿÿÿÿ8æ’ñ…¯1
 s
-java:S1104"QMake links a static final constant or non-public and provide accessors if needed.(´å¡µüÿÿÿÿ8Şî¯Ö®1
+java:S1104!"QMake links a static final constant or non-public and provide accessors if needed.(´å¡µüÿÿÿÿ8æ’ñ…¯1
+z
+java:S1104$"XMake visitedTimes a static final constant or non-public and provide accessors if needed.(§ÄŠûÿÿÿÿ8æ’ñ…¯1
 q
-java:S1104#"OMake IDs a static final constant or non-public and provide accessors if needed.(ÿõãĞıÿÿÿÿ8Şî¯Ö®1
+java:S1104("OMake IDs a static final constant or non-public and provide accessors if needed.(ÿõãĞıÿÿÿÿ8æ’ñ…¯1
 U
-java:S1444"3Make this "public static configManager" field final(ßÚöùÿÿÿÿ8Şî¯Ö®1
+java:S1444"3Make this "public static configManager" field final(ßÚöùÿÿÿÿ8æ’ñ…¯1
 O
-java:S1444"-Make this "public static webpage" field final(‚Øà²üÿÿÿÿ8Şî¯Ö®1
+java:S1444"-Make this "public static webpage" field final(‚Øà²üÿÿÿÿ8æ’ñ…¯1
 H
-java:S1444"+Make this "public static style" field final(ÛÓ©¶8Şî¯Ö®1
+java:S1444"+Make this "public static style" field final(ÛÓ©¶8æ’ñ…¯1
 J
-java:S1444"(Make this "public static js" field final(²È×óûÿÿÿÿ8Şî¯Ö®1
+java:S1444"(Make this "public static js" field final(²È×óûÿÿÿÿ8æ’ñ…¯1
 L
-java:S1444"0Make this "public static progressJS" field final(»Í-8Şî¯Ö®1
+java:S1444"0Make this "public static progressJS" field final(»Í-8æ’ñ…¯1
 N
-java:S1444",Make this "public static random" field final(×‘éµùÿÿÿÿ8Şî¯Ö®1
+java:S1444",Make this "public static random" field final(×‘éµùÿÿÿÿ8ç’ñ…¯1
 N
-java:S1444",Make this "public static titles" field final(Ğï¥÷ûÿÿÿÿ8Şî¯Ö®1
+java:S1444",Make this "public static titles" field final(Ğï¥÷ûÿÿÿÿ8ç’ñ…¯1
 O
-java:S1444"-Make this "public static formats" field final(“îœúÿÿÿÿ8Şî¯Ö®1
+java:S1444"-Make this "public static formats" field final(“îœúÿÿÿÿ8ç’ñ…¯1
 M
-java:S1444"+Make this "public static links" field final(´å¡µüÿÿÿÿ8Şî¯Ö®1
+java:S1444!"+Make this "public static links" field final(´å¡µüÿÿÿÿ8ç’ñ…¯1
+T
+java:S1444$"2Make this "public static visitedTimes" field final(§ÄŠûÿÿÿÿ8ç’ñ…¯1
 K
-java:S1444#")Make this "public static IDs" field final(ÿõãĞıÿÿÿÿ8Şî¯Ö®1
+java:S1444(")Make this "public static IDs" field final(ÿõãĞıÿÿÿÿ8ç’ñ…¯1
 p
-java:S3008#"NRename this field "IDs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿõãĞıÿÿÿÿ8®ñ¯Ö®1
+java:S3008("NRename this field "IDs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿõãĞıÿÿÿÿ8¬•ñ…¯1
 ?
-java:S2386"Make this member "protected".(Ğï¥÷ûÿÿÿÿ8¯ñ¯Ö®1
+java:S2386"Make this member "protected".(Ğï¥÷ûÿÿÿÿ8°•ñ…¯1
 ?
-java:S2386"Make this member "protected".(“îœúÿÿÿÿ8¯ñ¯Ö®1
+java:S2386"Make this member "protected".(“îœúÿÿÿÿ8²•ñ…¯1
 ?
-java:S2386"Make this member "protected".(´å¡µüÿÿÿÿ8¯ñ¯Ö®1
+java:S2386!"Make this member "protected".(´å¡µüÿÿÿÿ8³•ñ…¯1
 ?
-java:S2386#"Make this member "protected".(ÿõãĞıÿÿÿÿ8¯ñ¯Ö®1
+java:S2386$"Make this member "protected".(§ÄŠûÿÿÿÿ8´•ñ…¯1
+?
+java:S2386("Make this member "protected".(ÿõãĞıÿÿÿÿ8¶•ñ…¯1
 o
-java:S3776&"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Çµí‘8¶ñ¯Ö®1
+java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(Çµí‘8Á•ñ…¯1
 
-java:S40873"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(Œ¯‰Â8¸ñ¯Ö®1
-X	java:S125L"<This block of commented-out lines of code should be removed.(ğ •Û8¾ñ¯Ö®1
-X	java:S125U"<This block of commented-out lines of code should be removed.(÷Ú‰õ8Æñ¯Ö®1
+java:S40878"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(Œ¯‰Â8Å•ñ…¯1
+j	java:S100u"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§¢‹›8İ•ñ…¯1

@@ -114,10 +114,12 @@ public class AppController {
 
         remoteAddress = "0:0:0:0:0:0:0:1".equals(remoteAddress) ? "127.0.0.1" : remoteAddress;
 
-        if (App.isOverTheLimitIP(remoteAddress)) { return App.webpage; }
+        if (App.isOverTheLimitIP(remoteAddress) ||
+                (!link.startsWith("https://youtu.be/") && !link.startsWith("https://www.youtube.com/watch?v="))) { return App.webpage; }
 
-         YTDownloader.manage_IDs(remoteAddress, link, format);
 
-         return App.webpage;
+        YTDownloader.manage_IDs(remoteAddress, link, format);
+
+        return App.webpage;
     }
 }

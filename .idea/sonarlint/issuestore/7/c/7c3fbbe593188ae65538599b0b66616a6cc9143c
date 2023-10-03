@@ -1,19 +1,19 @@
 
 ~
-java:S1192>"aDefine a constant instead of duplicating this literal "https://www.youtube.com/watch?v=" 3 times.(îïëŒ8è¨ùØ®1
+java:S1192="aDefine a constant instead of duplicating this literal "https://www.youtube.com/watch?v=" 3 times.(îïëŒ8Ø³Ø‚¯1
 j
-java:S1192?"HDefine a constant instead of duplicating this literal "videos/" 8 times.(Î©å†øÿÿÿÿ8é¨ùØ®1
+java:S1192>"HDefine a constant instead of duplicating this literal "videos/" 8 times.(Î©å†øÿÿÿÿ8Ú³Ø‚¯1
 t
-java:S1192@"RDefine a constant instead of duplicating this literal "https://youtu.be/" 3 times.(û¢¹Œşÿÿÿÿ8é¨ùØ®1
+java:S1192?"RDefine a constant instead of duplicating this literal "https://youtu.be/" 3 times.(û¢¹Œşÿÿÿÿ8Û³Ø‚¯1
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™üÊ¶üÿÿÿÿ8ˆ©ùØ®1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™üÊ¶üÿÿÿÿ8¥´Ø‚¯1
 \
-java:S1118":Add a private constructor to hide the implicit public one.(ŸúÂ”ûÿÿÿÿ8‰©ùØ®1
-j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä¿ÿß8‹©ùØ®1
-C	java:S131!""Add a default case to this switch.(Ô§ßÉıÿÿÿÿ8”©ùØ®1
-j	java:S100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü¨§·8™©ùØ®1
-J	java:S108E")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8©ùØ®1
-j	java:S100H"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“ÊÜŸ8©ùØ®1
-J	java:S108Q")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8Ÿ©ùØ®1
-j	java:S100U"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÁÏÏ8 ©ùØ®1
-J	java:S108b")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8£©ùØ®1
+java:S1118":Add a private constructor to hide the implicit public one.(ŸúÂ”ûÿÿÿÿ8©´Ø‚¯1
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä¿ÿß8¬´Ø‚¯1
+C	java:S131 ""Add a default case to this switch.(Ô§ßÉıÿÿÿÿ8¼´Ø‚¯1
+j	java:S100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü¨§·8Ì´Ø‚¯1
+J	java:S108D")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8Õ´Ø‚¯1
+j	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“ÊÜŸ8Õ´Ø‚¯1
+J	java:S108P")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8à´Ø‚¯1
+j	java:S100T"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÁÏÏ8á´Ø‚¯1
+J	java:S108a")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8ë´Ø‚¯1

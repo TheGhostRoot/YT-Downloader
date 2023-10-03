@@ -60,7 +60,7 @@ public class YTDownloader {
             Stream stream = new Youtube(link).streams().getHighestResolution();
             if (link.startsWith("https://www.youtube.com/watch?v=")) {
                 stream.download("videos/", link.substring(32, 43), YTDownloader::progress);
-            } else if (link.startsWith("https://youtu.be/")) {
+            } else {
                 // deletes the already existing file
                 stream.download("videos/", link.substring(17, 28), YTDownloader::progress);
             }
@@ -73,7 +73,7 @@ public class YTDownloader {
             Stream stream = new Youtube(link).streams().getLowestResolution();
             if (link.startsWith("https://www.youtube.com/watch?v=")) {
                 stream.download("videos/", link.substring(32, 43), YTDownloader::progress);
-            } else if (link.startsWith("https://youtu.be/")) {
+            } else {
                 stream.download("videos/", link.substring(17, 28), YTDownloader::progress);
             }
             cleanUp(gen_id);
@@ -88,7 +88,7 @@ public class YTDownloader {
             if (link.startsWith("https://www.youtube.com/watch?v=")) {
                 name = link.substring(32, 43);
                 stream.download("videos/", name, YTDownloader::progress);
-            } else if (link.startsWith("https://youtu.be/")) {
+            } else {
                 name = link.substring(17, 28);
                 stream.download("videos/", link.substring(17, 28), YTDownloader::progress);
             }
