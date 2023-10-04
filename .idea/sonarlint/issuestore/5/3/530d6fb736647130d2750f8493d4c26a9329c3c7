@@ -1,72 +1,138 @@
 
-…
-java:S1319"cThe type of "titles" should be an interface such as "Map" rather than the implementation "HashMap".(Ğï¥÷ûÿÿÿÿ8ä’ñ…¯1
-†
-java:S1319"dThe type of "formats" should be an interface such as "Map" rather than the implementation "HashMap".(“îœúÿÿÿÿ8ä’ñ…¯1
-„
-java:S1319!"bThe type of "links" should be an interface such as "Map" rather than the implementation "HashMap".(´å¡µüÿÿÿÿ8å’ñ…¯1
-‹
-java:S1319$"iThe type of "visitedTimes" should be an interface such as "Map" rather than the implementation "HashMap".(§ÄŠûÿÿÿÿ8å’ñ…¯1
-‚
-java:S1319("`The type of "IDs" should be an interface such as "Map" rather than the implementation "HashMap".(ÿõãĞıÿÿÿÿ8å’ñ…¯1
-{
-java:S1104"YMake configManager a static final constant or non-public and provide accessors if needed.(ßÚöùÿÿÿÿ8æ’ñ…¯1
-u
-java:S1104"SMake webpage a static final constant or non-public and provide accessors if needed.(‚Øà²üÿÿÿÿ8æ’ñ…¯1
 n
-java:S1104"QMake style a static final constant or non-public and provide accessors if needed.(ÛÓ©¶8æ’ñ…¯1
-p
-java:S1104"NMake js a static final constant or non-public and provide accessors if needed.(²È×óûÿÿÿÿ8æ’ñ…¯1
-r
-java:S1104"VMake progressJS a static final constant or non-public and provide accessors if needed.(»Í-8æ’ñ…¯1
-t
-java:S1104"RMake random a static final constant or non-public and provide accessors if needed.(×‘éµùÿÿÿÿ8æ’ñ…¯1
-t
-java:S1104"RMake titles a static final constant or non-public and provide accessors if needed.(Ğï¥÷ûÿÿÿÿ8æ’ñ…¯1
+java:S1192W"LDefine a constant instead of duplicating this literal "placeholder" 3 times.(ŒµÌÂûÿÿÿÿ8¾ù´Ö¯1
+c
+java:S1192X"FDefine a constant instead of duplicating this literal "value" 3 times.(¯µ¿â8¾ù´Ö¯1
+k
+java:S1192W"IDefine a constant instead of duplicating this literal "frontend" 6 times.(ŒµÌÂûÿÿÿÿ8¾ù´Ö¯1
+…
+java:S1319"cThe type of "titles" should be an interface such as "Map" rather than the implementation "HashMap".(Ğï¥÷ûÿÿÿÿ8¿ù´Ö¯1
+†
+java:S1319""dThe type of "formats" should be an interface such as "Map" rather than the implementation "HashMap".(“îœúÿÿÿÿ8¿ù´Ö¯1
+„
+java:S1319$"bThe type of "links" should be an interface such as "Map" rather than the implementation "HashMap".(´å¡µüÿÿÿÿ8¿ù´Ö¯1
+‹
+java:S1319'"iThe type of "visitedTimes" should be an interface such as "Map" rather than the implementation "HashMap".(§ÄŠûÿÿÿÿ8¿ù´Ö¯1
+‚
+java:S1319+"`The type of "IDs" should be an interface such as "Map" rather than the implementation "HashMap".(ÿõãĞıÿÿÿÿ8¿ù´Ö¯1
+…
+java:S1319@"cThe type of "config" should be an interface such as "Map" rather than the implementation "HashMap".(½¿ù¤ıÿÿÿÿ8Àù´Ö¯1
+v
+java:S1104"YMake configManager a static final constant or non-public and provide accessors if needed.(÷—„”8Áù´Ö¯1
 u
-java:S1104"SMake formats a static final constant or non-public and provide accessors if needed.(“îœúÿÿÿÿ8æ’ñ…¯1
-s
-java:S1104!"QMake links a static final constant or non-public and provide accessors if needed.(´å¡µüÿÿÿÿ8æ’ñ…¯1
-z
-java:S1104$"XMake visitedTimes a static final constant or non-public and provide accessors if needed.(§ÄŠûÿÿÿÿ8æ’ñ…¯1
-q
-java:S1104("OMake IDs a static final constant or non-public and provide accessors if needed.(ÿõãĞıÿÿÿÿ8æ’ñ…¯1
-U
-java:S1444"3Make this "public static configManager" field final(ßÚöùÿÿÿÿ8æ’ñ…¯1
-O
-java:S1444"-Make this "public static webpage" field final(‚Øà²üÿÿÿÿ8æ’ñ…¯1
-H
-java:S1444"+Make this "public static style" field final(ÛÓ©¶8æ’ñ…¯1
-J
-java:S1444"(Make this "public static js" field final(²È×óûÿÿÿÿ8æ’ñ…¯1
-L
-java:S1444"0Make this "public static progressJS" field final(»Í-8æ’ñ…¯1
-N
-java:S1444",Make this "public static random" field final(×‘éµùÿÿÿÿ8ç’ñ…¯1
-N
-java:S1444",Make this "public static titles" field final(Ğï¥÷ûÿÿÿÿ8ç’ñ…¯1
-O
-java:S1444"-Make this "public static formats" field final(“îœúÿÿÿÿ8ç’ñ…¯1
-M
-java:S1444!"+Make this "public static links" field final(´å¡µüÿÿÿÿ8ç’ñ…¯1
-T
-java:S1444$"2Make this "public static visitedTimes" field final(§ÄŠûÿÿÿÿ8ç’ñ…¯1
-K
-java:S1444(")Make this "public static IDs" field final(ÿõãĞıÿÿÿÿ8ç’ñ…¯1
+java:S1104"SMake webpage a static final constant or non-public and provide accessors if needed.(‚Øà²üÿÿÿÿ8Áù´Ö¯1
+n
+java:S1104"QMake style a static final constant or non-public and provide accessors if needed.(ÛÓ©¶8Áù´Ö¯1
 p
-java:S3008("NRename this field "IDs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿõãĞıÿÿÿÿ8¬•ñ…¯1
-?
-java:S2386"Make this member "protected".(Ğï¥÷ûÿÿÿÿ8°•ñ…¯1
-?
-java:S2386"Make this member "protected".(“îœúÿÿÿÿ8²•ñ…¯1
-?
-java:S2386!"Make this member "protected".(´å¡µüÿÿÿÿ8³•ñ…¯1
-?
-java:S2386$"Make this member "protected".(§ÄŠûÿÿÿÿ8´•ñ…¯1
-?
-java:S2386("Make this member "protected".(ÿõãĞıÿÿÿÿ8¶•ñ…¯1
+java:S1104"NMake js a static final constant or non-public and provide accessors if needed.(²È×óûÿÿÿÿ8Áù´Ö¯1
+r
+java:S1104"VMake progressJS a static final constant or non-public and provide accessors if needed.(»Í-8Áù´Ö¯1
+t
+java:S1104"RMake random a static final constant or non-public and provide accessors if needed.(×‘éµùÿÿÿÿ8Áù´Ö¯1
+t
+java:S1104"RMake titles a static final constant or non-public and provide accessors if needed.(Ğï¥÷ûÿÿÿÿ8Áù´Ö¯1
+u
+java:S1104""SMake formats a static final constant or non-public and provide accessors if needed.(“îœúÿÿÿÿ8Áù´Ö¯1
+s
+java:S1104$"QMake links a static final constant or non-public and provide accessors if needed.(´å¡µüÿÿÿÿ8Áù´Ö¯1
+z
+java:S1104'"XMake visitedTimes a static final constant or non-public and provide accessors if needed.(§ÄŠûÿÿÿÿ8Áù´Ö¯1
+q
+java:S1104+"OMake IDs a static final constant or non-public and provide accessors if needed.(ÿõãĞıÿÿÿÿ8Áù´Ö¯1
+™
+java:S11041"wMake send_download_request_to_server_placeholder a static final constant or non-public and provide accessors if needed.(÷ ˜íÿÿÿÿÿ8Áù´Ö¯1
+“
+java:S11042"qMake send_download_request_to_server_value a static final constant or non-public and provide accessors if needed.(ÜÁÒøÿÿÿÿ8Áù´Ö¯1
+—
+java:S11044"uMake ask_server_for_download_stats_placeholder a static final constant or non-public and provide accessors if needed.(êâÙüÿÿÿÿ8Áù´Ö¯1
+Œ
+java:S11045"oMake ask_server_for_download_stats_value a static final constant or non-public and provide accessors if needed.(ôèÍ¨8Áù´Ö¯1
+•
+java:S11047"yMake client_wants_to_download_the_file_placeholder a static final constant or non-public and provide accessors if needed.(«•¢J8Áù´Ö¯1
+
+java:S11048"sMake client_wants_to_download_the_file_value a static final constant or non-public and provide accessors if needed.(ãÿÜµ8Âù´Ö¯1
+m
+java:S1104;"PMake port a static final constant or non-public and provide accessors if needed.(å‘¨8Âù´Ö¯1
+…
+java:S1104<"cMake max_requests_per_second a static final constant or non-public and provide accessors if needed.(×ªê¹ûÿÿÿÿ8Âù´Ö¯1
+t
+java:S1104@"RMake config a static final constant or non-public and provide accessors if needed.(½¿ù¤ıÿÿÿÿ8Âù´Ö¯1
+P
+java:S1444"3Make this "public static configManager" field final(÷—„”8Âù´Ö¯1
+O
+java:S1444"-Make this "public static webpage" field final(‚Øà²üÿÿÿÿ8Âù´Ö¯1
+H
+java:S1444"+Make this "public static style" field final(ÛÓ©¶8Âù´Ö¯1
+J
+java:S1444"(Make this "public static js" field final(²È×óûÿÿÿÿ8Âù´Ö¯1
+L
+java:S1444"0Make this "public static progressJS" field final(»Í-8Âù´Ö¯1
+N
+java:S1444",Make this "public static random" field final(×‘éµùÿÿÿÿ8Âù´Ö¯1
+N
+java:S1444",Make this "public static titles" field final(Ğï¥÷ûÿÿÿÿ8Âù´Ö¯1
+O
+java:S1444""-Make this "public static formats" field final(“îœúÿÿÿÿ8Âù´Ö¯1
+M
+java:S1444$"+Make this "public static links" field final(´å¡µüÿÿÿÿ8Âù´Ö¯1
+T
+java:S1444'"2Make this "public static visitedTimes" field final(§ÄŠûÿÿÿÿ8Âù´Ö¯1
+K
+java:S1444+")Make this "public static IDs" field final(ÿõãĞıÿÿÿÿ8Âù´Ö¯1
+s
+java:S14441"QMake this "public static send_download_request_to_server_placeholder" field final(÷ ˜íÿÿÿÿÿ8Âù´Ö¯1
+m
+java:S14442"KMake this "public static send_download_request_to_server_value" field final(ÜÁÒøÿÿÿÿ8Âù´Ö¯1
+q
+java:S14444"OMake this "public static ask_server_for_download_stats_placeholder" field final(êâÙüÿÿÿÿ8Âù´Ö¯1
+f
+java:S14445"IMake this "public static ask_server_for_download_stats_value" field final(ôèÍ¨8Âù´Ö¯1
 o
-java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(Çµí‘8Á•ñ…¯1
+java:S14447"SMake this "public static client_wants_to_download_the_file_placeholder" field final(«•¢J8Âù´Ö¯1
+j
+java:S14448"MMake this "public static client_wants_to_download_the_file_value" field final(ãÿÜµ8Ãù´Ö¯1
+G
+java:S1444;"*Make this "public static port" field final(å‘¨8Ãù´Ö¯1
+_
+java:S1444<"=Make this "public static max_requests_per_second" field final(×ªê¹ûÿÿÿÿ8Ãù´Ö¯1
+N
+java:S1444@",Make this "public static config" field final(½¿ù¤ıÿÿÿÿ8Ãù´Ö¯1
+p
+java:S3008+"NRename this field "IDs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿõãĞıÿÿÿÿ8Äû´Ö¯1
+˜
+java:S30081"vRename this field "send_download_request_to_server_placeholder" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷ ˜íÿÿÿÿÿ8Åû´Ö¯1
+’
+java:S30082"pRename this field "send_download_request_to_server_value" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜÁÒøÿÿÿÿ8Åû´Ö¯1
+–
+java:S30084"tRename this field "ask_server_for_download_stats_placeholder" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êâÙüÿÿÿÿ8Åû´Ö¯1
+‹
+java:S30085"nRename this field "ask_server_for_download_stats_value" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôèÍ¨8Åû´Ö¯1
+”
+java:S30087"xRename this field "client_wants_to_download_the_file_placeholder" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«•¢J8Åû´Ö¯1
+
+java:S30088"rRename this field "client_wants_to_download_the_file_value" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãÿÜµ8Åû´Ö¯1
+„
+java:S3008<"bRename this field "max_requests_per_second" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ªê¹ûÿÿÿÿ8Åû´Ö¯1
+?
+java:S2386"Make this member "protected".(Ğï¥÷ûÿÿÿÿ8Çû´Ö¯1
+?
+java:S2386""Make this member "protected".(“îœúÿÿÿÿ8Çû´Ö¯1
+?
+java:S2386$"Make this member "protected".(´å¡µüÿÿÿÿ8Çû´Ö¯1
+?
+java:S2386'"Make this member "protected".(§ÄŠûÿÿÿÿ8Çû´Ö¯1
+?
+java:S2386+"Make this member "protected".(ÿõãĞıÿÿÿÿ8Çû´Ö¯1
+?
+java:S2386@"Make this member "protected".(½¿ù¤ıÿÿÿÿ8Çû´Ö¯1
+o
+java:S3776B"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(Çµí‘8Óû´Ö¯1
+G	java:S106L"+Replace this use of System.out by a logger.(Âá“ğ8İû´Ö¯1
 
-java:S40878"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(Œ¯‰Â8Å•ñ…¯1
-j	java:S100u"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§¢‹›8İ•ñ…¯1
+java:S4087c"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(Œ¯‰Â8áû´Ö¯1
+M
+java:S2201]"+The return value of "replace" must be used.(Òÿ¡üÿÿÿÿ8æû´Ö¯1
+L	java:S106`"+Replace this use of System.out by a logger.(ñ—¸½úÿÿÿÿ8ÚÆÄÖ¯1
+k	java:S100£"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§¢‹›8‡ü´Ö¯1
+M
+java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º8‰ü´Ö¯1
