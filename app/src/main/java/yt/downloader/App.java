@@ -6,8 +6,11 @@ package yt.downloader;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -15,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 @SpringBootApplication
 public class App {
 
-    public static ConfigManager configManager;
+    public static ConfigManager configManager = null;
     public static String webpage;
     public static String style;
     public static String js;
@@ -40,10 +43,38 @@ public class App {
     public static HashMap<Long, String> IDs = new HashMap<>();
 
 
+
+
+
+    public static String send_download_request_to_server_placeholder = "{{{send_download_request_to_server}}}";
+    public static String send_download_request_to_server_value = "http://localhost:25533/download";
+
+    public static String ask_server_for_download_stats_placeholder = "{{{ask_server_for_download_stats}}}";
+    public static String ask_server_for_download_stats_value = "http://localhost:25533/downloader";
+
+    public static String client_wants_to_download_the_file_placeholder = "{{{ask_server_for_download_stats}}}";
+    public static String client_wants_to_download_the_file_value = "http://localhost:25533/ask";
+
+
+    public static int port = 8080;
+    public static int max_requests_per_second = 5;
+
+
+
+    public static HashMap<String, Object> config = null;
+
     public static void main(String[] args) {
         try {
             configManager = new ConfigManager();
         } catch (Exception e) { e.printStackTrace(); }
+
+
+        Yaml yaml = new Yaml();
+
+        try {
+            config = yaml.load(new FileInputStream("config.yml"));
+        } catch (Exception e) { System.out.println("Can't read config.yml  file"); }
+
 
         for (String path : List.of("web/index.html", "web/styles.css", "web/app.js", "web/progress.js")) {
             File file = new File(path);
@@ -51,7 +82,19 @@ public class App {
                 try (Scanner myReader = new Scanner(file)) {
                     StringBuilder stringBuilder = new StringBuilder();
                     while (myReader.hasNextLine()) {
-                        stringBuilder.append(myReader.nextLine()).append("\n");
+                        String line = myReader.nextLine();
+                        if (config != null) {
+                            line.replace(((Map<?, ?>)((Map<?, ?>) config.get("frontend")).get("send_download_request_to_server")).get("placeholder").toString(),
+                                    ((Map<?, ?>)((Map<?, ?>) config.get("frontend")).get("send_download_request_to_server")).get("value").toString())
+
+                                    .replace(((Map<?, ?>)((Map<?, ?>) config.get("frontend")).get("ask_server_for_download_stats")).get("placeholder").toString(),
+                                            ((Map<?, ?>)((Map<?, ?>) config.get("frontend")).get("ask_server_for_download_stats")).get("value").toString())
+
+                                    .replace(((Map<?, ?>)((Map<?, ?>) config.get("frontend")).get("client_wants_to_download_the_file")).get("placeholder").toString(),
+                                            ((Map<?, ?>)((Map<?, ?>) config.get("frontend")).get("client_wants_to_download_the_file")).get("value").toString());
+                        }
+                        System.out.println(line);
+                        stringBuilder.append(line).append("\n");
                     }
                     myReader.close();
                     if (path.endsWith("app.js")) {
@@ -72,7 +115,7 @@ public class App {
                 } else if (path.endsWith(".css")){
                     style = "body { background-image: url('background.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover; }";
                 } else {
-                    webpage = configManager.getIndexHtml();
+                    webpage = configManager != null ? configManager.getIndexHtml() : "";
                 }
             }
         }
@@ -88,30 +131,33 @@ public class App {
         Executors.newScheduledThreadPool(1).scheduleAtFixedRate(helloRunnable, 0, 1, TimeUnit.SECONDS);
 
         SpringApplication app = new SpringApplication(App.class);
-        app.setDefaultProperties(Collections.singletonMap("server.port", "25533"));
+        app.setDefaultProperties(Collections.singletonMap("server.port", ((Map<?, ?>) config.get("backend")).get("port").toString() ));
         app.run(args);
 
     }
 
 
     public static boolean isOverTheLimitIP(String ip) {
-        if (visitedTimes.containsKey(ip) && visitedTimes.get(ip) >= 5L) {
-            return true;
-        } else {
+        try {
 
-            if (1 < getAll_ID_from_IP(ip).stream().filter(id -> formats.get(id).equals("mp4") ||
-                    formats.get(id).equals("mp3")).count()) {
-
+            if (visitedTimes.containsKey(ip) && visitedTimes.get(ip) >= Long.parseLong(((Map<?, ?>) config.get("backend")).get("max_requests_per_second").toString())) {
                 return true;
-            }
-
-            if (visitedTimes.containsKey(ip)) {
-                visitedTimes.put(ip, visitedTimes.get(ip)+1);
             } else {
-                visitedTimes.put(ip, 1L);
+
+                if (1 < getAll_ID_from_IP(ip).stream().filter(id -> formats.get(id).equals("mp4") ||
+                        formats.get(id).equals("mp3")).count()) {
+
+                    return true;
+                }
+
+                if (visitedTimes.containsKey(ip)) {
+                    visitedTimes.put(ip, visitedTimes.get(ip) + 1);
+                } else {
+                    visitedTimes.put(ip, 1L);
+                }
+                return false;
             }
-            return false;
-        }
+        } catch (Exception e) { return true; }
     }
 
     public static List<Long> getAll_ID_from_IP(String ip) {

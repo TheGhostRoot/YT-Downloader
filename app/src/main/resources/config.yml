@@ -1,9 +1,18 @@
-Just-a-list:
-  - Server1
-  - Server2
-hello2:
-  2: 3
-hello:
-  Hi: GG
-yooo: 5
-Testing: my nerves
+frontend:
+  send_download_request_to_server:
+    placeholder: "{{{send_download_request_to_server}}}"
+    value: "http://localhost:25533/download"
+  ask_server_for_download_stats:
+    placeholder: "{{{ask_server_for_download_stats}}}"
+    value: "http://localhost:25533/downloader"
+  client_wants_to_download_the_file:
+    placeholder: "{{{client_wants_to_download_the_file}}}"
+    value: "http://localhost:25533/ask"
+  html_content_security_policy_host:
+    placeholder: "{{{html_content_security_policy_host}}}"
+    value: "http://localhost:25533"
+
+backend:
+  port: 25533
+  max_requests_per_second: 5
+
