@@ -33,3 +33,5 @@ w
 G.idea/sonarlint/issuestore/7/c/7c3fbbe593188ae65538599b0b66616a6cc9143c,e\d\ed4d7ca072a77e30e49809f4ddde797cb187a9f2
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+l
+<app/src/main/java/yt/downloader/WebCustomSecurityConfig.java,d\f\dfcfaf9bd73cab8a5c9df78f3219ee0fe91b35bd

@@ -14,7 +14,7 @@ public class ConfigManager {
 
 
     public ConfigManager() throws IOException {
-        for (String name : List.of("web/index.html", "config.yml", "web/styles.css", "web/app.js", "videos/.", "web/progress.js")) {
+        for (String name : List.of("web/index.html", "config.yml", "web/styles.css", "web/app.js", "videos/.", "web/progress.js", "Dockerfile")) {
             try {
                 if (!Files.exists(Path.of(name))) {
                     if (name.contains("/")) {

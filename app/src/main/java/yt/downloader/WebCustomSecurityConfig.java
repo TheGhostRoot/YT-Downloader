@@ -13,10 +13,7 @@ import static org.springframework.security.web.server.header.XFrameOptionsServer
 
 @Configuration
 @EnableWebSecurity
-@EnableAutoConfiguration(exclude = {org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class})
 public class WebCustomSecurityConfig {
-
-      //  http.headers().contentSecurityPolicy("script-src 'self' http://localhosts:25533; report-uri http://localhosts:25533;");
 
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         http.headers(headers -> headers
