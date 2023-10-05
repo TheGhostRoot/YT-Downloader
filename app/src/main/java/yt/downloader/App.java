@@ -44,23 +44,6 @@ public class App {
 
 
 
-
-
-    public static String send_download_request_to_server_placeholder = "{{{send_download_request_to_server}}}";
-    public static String send_download_request_to_server_value = "http://localhost:25533/download";
-
-    public static String ask_server_for_download_stats_placeholder = "{{{ask_server_for_download_stats}}}";
-    public static String ask_server_for_download_stats_value = "http://localhost:25533/downloader";
-
-    public static String client_wants_to_download_the_file_placeholder = "{{{ask_server_for_download_stats}}}";
-    public static String client_wants_to_download_the_file_value = "http://localhost:25533/ask";
-
-
-    public static int port = 8080;
-    public static int max_requests_per_second = 5;
-
-
-
     public static HashMap<String, Object> config = null;
 
     public static void main(String[] args) {
