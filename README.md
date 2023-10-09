@@ -26,9 +26,10 @@ Backend endpoints are only custom for frontend. Here are the backend default end
 * ```Docker```
 
 ### Build and Run (Java 17 required)
-# First Build then Run
 
-# Note: If you have changed anything in the build.gradle then it is better to change te RUN command to the and of the JAR file thet gradle builds. Go to app/build/libs  and search for NAME-Version.jar . Thats the name of it.
+First Build then Run
+
+Note: If you have changed anything in the build.gradle then it is better to change te RUN command to the and of the JAR file thet gradle builds. Go to app/build/libs  and search for NAME-Version.jar . Thats the name of it.
 
 Build:
 ```
